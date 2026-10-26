@@ -6,7 +6,7 @@
     "author": "Noelson",
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -76,7 +76,16 @@
           "lyrics": "Sao : a- : nio : no | lay : fo- : toa- : na | me- : ty : re :  || A- : za : a- : ve- | la : hi- : ta- : la- | ho, : lay : Je- : so- | sy : tia : a- : nao ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 76,
+      "tempo": "♩ = 76",
+      "audio": {
+        "S": "audio/001_S.mp3",
+        "A": "audio/001_A.mp3",
+        "T": "audio/001_T.mp3",
+        "B": "audio/001_B.mp3",
+        "SATB": "audio/001_SATB.mp3"
+      }
     }
   },
   {
@@ -86,7 +95,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -156,7 +165,16 @@
           "lyrics": "Ka- : njo : fi- : ta- | ka : a- : vo- : koa || Fa : na- : ni- : mba | ny : te- : na, : sai- | na, : fo, : fa- : na- | hy :  :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 80,
+      "tempo": "♩ = 80",
+      "audio": {
+        "S": "audio/002_S.mp3",
+        "A": "audio/002_A.mp3",
+        "T": "audio/002_T.mp3",
+        "B": "audio/002_B.mp3",
+        "SATB": "audio/002_SATB.mp3"
+      }
     }
   },
   {
@@ -166,7 +184,7 @@
     "author": "Noelson",
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -236,7 +254,16 @@
           "lyrics": "La- : zao : i- : sao- | ra- : na : me- : ndri- | ka : i- : sao- : ra- | na :  :  :  || Je- : soa : na- : nda- | tsa- : ka :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 84,
+      "tempo": "♩ = 84",
+      "audio": {
+        "S": "audio/003_S.mp3",
+        "A": "audio/003_A.mp3",
+        "T": "audio/003_T.mp3",
+        "B": "audio/003_B.mp3",
+        "SATB": "audio/003_SATB.mp3"
+      }
     }
   },
   {
@@ -246,7 +273,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -316,7 +343,16 @@
           "lyrics": "I- : zay : mi- : no | A- : zy : ha- : na- | m-piai- : na- : na :  || Ma- : ndra- : ki- : zay, | FIAI- : NA- : NA :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 88,
+      "tempo": "♩ = 88",
+      "audio": {
+        "S": "audio/004_S.mp3",
+        "A": "audio/004_A.mp3",
+        "T": "audio/004_T.mp3",
+        "B": "audio/004_B.mp3",
+        "SATB": "audio/004_SATB.mp3"
+      }
     }
   },
   {
@@ -326,7 +362,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -396,7 +432,16 @@
           "lyrics": "a- : ry : koa : he- | noy : ny : feo- : ny || Fa : Je- : so : dia | mpa- : ndre- : sy : a- | nao, :  :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 72,
+      "tempo": "♩ = 72",
+      "audio": {
+        "S": "audio/005_S.mp3",
+        "A": "audio/005_A.mp3",
+        "T": "audio/005_T.mp3",
+        "B": "audio/005_B.mp3",
+        "SATB": "audio/005_SATB.mp3"
+      }
     }
   },
   {
@@ -406,7 +451,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -476,7 +521,16 @@
           "lyrics": "Hi- : ra : e : mba | ho : fi- : sao- : ra- | na :  :  :  || fa : ia- : nao : mi- | ta- : hy : mi- : tsi- | njo : ny : o- : lo- | nao :  :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 76,
+      "tempo": "♩ = 76",
+      "audio": {
+        "S": "audio/006_S.mp3",
+        "A": "audio/006_A.mp3",
+        "T": "audio/006_T.mp3",
+        "B": "audio/006_B.mp3",
+        "SATB": "audio/006_SATB.mp3"
+      }
     }
   },
   {
@@ -486,7 +540,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -556,7 +610,16 @@
           "lyrics": "A- : nao : a- : ho... || Fa- : na- : hy : ma- | si- : na : o, : ta- | fi- : ho : a- : ho ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 80,
+      "tempo": "♩ = 80",
+      "audio": {
+        "S": "audio/007_S.mp3",
+        "A": "audio/007_A.mp3",
+        "T": "audio/007_T.mp3",
+        "B": "audio/007_B.mp3",
+        "SATB": "audio/007_SATB.mp3"
+      }
     }
   },
   {
@@ -566,7 +629,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -636,7 +699,16 @@
           "lyrics": "Ray : ô : He- : noy | i- : ty : za- : na- | kao : (he- : noy, :  || mia- : ntso : a- : nao) | sy : mi- : ta- : la- | ho :  :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 84,
+      "tempo": "♩ = 84",
+      "audio": {
+        "S": "audio/008_S.mp3",
+        "A": "audio/008_A.mp3",
+        "T": "audio/008_T.mp3",
+        "B": "audio/008_B.mp3",
+        "SATB": "audio/008_SATB.mp3"
+      }
     }
   },
   {
@@ -646,7 +718,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -716,7 +788,16 @@
           "lyrics": "i- : lay : sa- : ta- | na : e- : fa : re- | si- : nao :  :  || a- : fa- : ka : i- | za- : hay :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 88,
+      "tempo": "♩ = 88",
+      "audio": {
+        "S": "audio/009_S.mp3",
+        "A": "audio/009_A.mp3",
+        "T": "audio/009_T.mp3",
+        "B": "audio/009_B.mp3",
+        "SATB": "audio/009_SATB.mp3"
+      }
     }
   },
   {
@@ -726,7 +807,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -796,7 +877,16 @@
           "lyrics": "Foa- : na : ny : fa- | sa- : na, : o- : ta | dia : la- : sa- : na || Ve- : lo- : na : i- | ndray : Je- : so, : i- | lay : A- : ndria- : ma- | ni- : tray :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 72,
+      "tempo": "♩ = 72",
+      "audio": {
+        "S": "audio/010_S.mp3",
+        "A": "audio/010_A.mp3",
+        "T": "audio/010_T.mp3",
+        "B": "audio/010_B.mp3",
+        "SATB": "audio/010_SATB.mp3"
+      }
     }
   },
   {
@@ -806,7 +896,7 @@
     "author": "Rakotomalala Faneva Harivony (Endard)",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -876,7 +966,16 @@
           "lyrics": "Fa : i- : za- : ho | no : tsy : na- : ndray | lay : na- : to- : lo- | trao : ho : a- : hy || Ka : ma- : ne- : ni- | na : ta- : fa- : sa- | ra- : ka : a- : mi- | nao :  :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 76,
+      "tempo": "♩ = 76",
+      "audio": {
+        "S": "audio/011_S.mp3",
+        "A": "audio/011_A.mp3",
+        "T": "audio/011_T.mp3",
+        "B": "audio/011_B.mp3",
+        "SATB": "audio/011_SATB.mp3"
+      }
     }
   },
   {
@@ -886,7 +985,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -956,7 +1055,16 @@
           "lyrics": "Mi- : tao- : na : a- | nao : ho : a- : mi- | n'ny : fa- : nja- : ka- | n'ny : la- : ni- : tra || Hoy : i- : zy : A- | to- : lo- : ry : a- | hy : ny : fo- : nao ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 80,
+      "tempo": "♩ = 80",
+      "audio": {
+        "S": "audio/012_S.mp3",
+        "A": "audio/012_A.mp3",
+        "T": "audio/012_T.mp3",
+        "B": "audio/012_B.mp3",
+        "SATB": "audio/012_SATB.mp3"
+      }
     }
   },
   {
@@ -966,7 +1074,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1036,7 +1144,16 @@
           "lyrics": "fa : to- : nga : no- | fo : ny : Te- : ny || ka : no- : ni- : na | ta- : mi- : ntsi- : ka, | hi- : ta : ny : vo- | ni- : na- : hi- : ny ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 84,
+      "tempo": "♩ = 84",
+      "audio": {
+        "S": "audio/013_S.mp3",
+        "A": "audio/013_A.mp3",
+        "T": "audio/013_T.mp3",
+        "B": "audio/013_B.mp3",
+        "SATB": "audio/013_SATB.mp3"
+      }
     }
   },
   {
@@ -1046,7 +1163,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1116,7 +1233,16 @@
           "lyrics": "Sai- : ngy : ve- : lo- | na : ho : ma- : ndra- | ki- : zay :  :  || Mba : ho : sa- : nta- | tra : hoa- : n'i- : zay | mi- : no :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 88,
+      "tempo": "♩ = 88",
+      "audio": {
+        "S": "audio/014_S.mp3",
+        "A": "audio/014_A.mp3",
+        "T": "audio/014_T.mp3",
+        "B": "audio/014_B.mp3",
+        "SATB": "audio/014_SATB.mp3"
+      }
     }
   },
   {
@@ -1126,7 +1252,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1196,7 +1322,16 @@
           "lyrics": "ma- : fy : ny : fiai- | gna- : na : ko : de | mi- : ta- : rai- : gna || mi- : re- : pa- : ka | be, : aia : ro : ha- | le- : ha :  :  ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 72,
+      "tempo": "♩ = 72",
+      "audio": {
+        "S": "audio/015_S.mp3",
+        "A": "audio/015_A.mp3",
+        "T": "audio/015_T.mp3",
+        "B": "audio/015_B.mp3",
+        "SATB": "audio/015_SATB.mp3"
+      }
     }
   },
   {
@@ -1206,7 +1341,7 @@
     "author": "Rajaonary Jean Robert",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 13,
+    "updatedAt": 15,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1276,7 +1411,16 @@
           "lyrics": "Fa- : na- : ntea- : na- | na : sy : fi- : noa- | n'ia- : na- : ko :  || Fi- : tia- : va- : na | tsy : le- : vo- : na | ma- : ndra- : ki- : zay ||"
         }
       ],
-      "verses": []
+      "verses": [],
+      "bpm": 76,
+      "tempo": "♩ = 76",
+      "audio": {
+        "S": "audio/016_S.mp3",
+        "A": "audio/016_A.mp3",
+        "T": "audio/016_T.mp3",
+        "B": "audio/016_B.mp3",
+        "SATB": "audio/016_SATB.mp3"
+      }
     }
   },
   {
@@ -1286,7 +1430,7 @@
     "author": null,
     "translator": null,
     "album": null,
-    "updatedAt": 12,
+    "updatedAt": 15,
     "solfa": {
       "ref": "FFPM 66",
       "keyName": "Do dia F",
@@ -1348,7 +1492,16 @@
       "verses": [
         "2. Ry olona ô, avia!\nRy tany, mifalia!\nMba henoy, ry havanay!\nMisy zaza hitanay,\nZanak'Andriamanitra\nHamoha indray ny lanitra;\nTeraka ny Tompo!\nTeraka Jeso!",
         "3. Ry Kristiana ô, hobio\nFa afaka hianao anio;\nResy izao ny rafinao,\nAfaka ota hianao,\nFahasoavan-dehibe\nNo ho anjaranao anie;\nTeraka ny Tompo!\nTeraka Jeso!"
-      ]
+      ],
+      "bpm": 88,
+      "tempo": "♩ = 88",
+      "audio": {
+        "S": "audio/017_S.mp3",
+        "A": "audio/017_A.mp3",
+        "T": "audio/017_T.mp3",
+        "B": "audio/017_B.mp3",
+        "SATB": "audio/017_SATB.mp3"
+      }
     }
   }
 ]
