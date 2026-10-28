@@ -99,8 +99,8 @@
     "updatedAt": 19,
     "solfa": {
       "ref": null,
-      "keyName": "Do dia C",
-      "tonic": "C",
+      "keyName": "Do dia F",
+      "tonic": "F",
       "meter": "4/4",
       "beatsPerBar": 4,
       "bpm": 80,
@@ -834,8 +834,8 @@
     "updatedAt": 18,
     "solfa": {
       "ref": null,
-      "keyName": "Do dia C",
-      "tonic": "C",
+      "keyName": "Do dia Ab na G",
+      "tonic": "Ab",
       "meter": "4/4",
       "beatsPerBar": 4,
       "bpm": 72,
@@ -857,61 +857,45 @@
       "systems": [
         {
           "parts": [
-            "m : s : d' : s | f : l : d' : l | r : t : s : m || m : s : d' : s | f : l : d' : l | r : t : s : t | m : m : - : - ||",
-            "d : m : s : m | f : l : d : l | s : r : s : d || d : m : s : m | f : l : d : l | s : r : s : r | d : d : - : - ||",
-            "s, : d : m : d | l, : d : f : d | t, : r : s, : s, || s, : d : m : d | l, : d : f : d | t, : r : s, : r | s, : s, : - : - ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : d, || d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : s, | d, : d, : - : - ||"
+            "s, : -.s, : -.s,;f, : -.l, | s, : - : - : - || m : -.m : -.m;r : -.f | m : - : - : - ||",
+            "m, : -.m, : -.m,;r, : -.f, | m, : - : - : - || d : -.d : -.d;d : -.d | d : - : - : - ||",
+            "d, : -.d : -.d,;d : -.d | d, : - : - : - || s : -.s : -.s;f : -.l | s : - : - : - ||",
+            "d, : -.d, : -.d,;d, : -.d, | d, : - : - : - || d : -.d : -.d;d : -.d | d : - : - : - ||"
           ],
-          "lyrics": "De- : ra : a- : sa- | ndra- : tray : La- : za | ve- : nte- : si- : nay || Ho- : by : ka- : loi- | nay : Ho : A- : nao, | ry : A- : ndria- : ma- | ni- : tray :  :  ||"
+          "lyrics": "De- : ra : a-;sa- : ndra- | tray : :  :  || La- : za : ve-;nte- : si- | nay : :  :  ||"
         },
         {
           "parts": [
-            "m : s : d' : s | f : l : d' : l | r : t : s : m || m : s : d' : s | f : l : d' : l | r : t : s : t | m : m : - : - ||",
-            "d : m : s : m | f : l : d : l | s : r : s : d || d : m : s : m | f : l : d : l | s : r : s : r | d : d : - : - ||",
-            "s, : d : m : d | l, : d : f : d | t, : r : s, : s, || s, : d : m : d | l, : d : f : d | t, : r : s, : r | s, : s, : - : - ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : d, || d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : s, | d, : d, : - : - ||"
+            "d : -.d : -.d;t, : -.d | r : - : - : d || m. : .s, : -.d;d : -.t, | d : - : - : - ||",
+            "s, : -.s, : -.s,;s, : -.s, | l, : - : - : l, || d. : .s, : -.s,;s, : -.s, | s, : - : - : - ||",
+            "m : -.m : -.m;r : -.m | f : - : - : f || s. : .m : -.m;m : -.r | m : - : - : - ||",
+            "d : -.d : -.d;d : -.d | f, : - : - : f, || s,. : .s, : -.s,;s, : -.s, | d, : - : - : - ||"
           ],
-          "lyrics": "Foa- : na : ny : fa- | sa- : na, : o- : ta | dia : la- : sa- : na || Ve- : lo- : na : i- | ndray : Je- : so, : i- | lay : A- : ndria- : ma- | ni- : tray :  :  ||"
+          "lyrics": "Ho- : by : ka-;lo- : i- | nay : :  : hoa || nao : ry : A-;ndria : ma- | ni-tray : :  :  ||"
         },
         {
           "parts": [
-            "m : s : d' : s | f : l : d' : l | m : - : - : - || m : s : d' : s | f : l : d' : m ||",
-            "d : m : s : m | f : l : d : l | d : - : - : - || d : m : s : m | f : l : d : d ||",
-            "s, : d : m : d | l, : d : f : d | s, : - : - : - || s, : d : m : d | l, : d : f : s, ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | d, : - : - : - || d, : d, : s, : d, | f, : f, : f, : d, ||"
+            "m;m;m : m.s : -.s;m : -.r | d : - : - : - || m;m;m : m.s : -.s;f : -.l | s : - : - : - ||",
+            "d;d;d : d.d : -.s,;d : -.t, | s, : - : - : - || d;d;d : d.d : -.d;d : -.d | d : - : - : - ||",
+            "s;s;s : s.m : -.m;s : -.f | m : - : - : - || s;s;s : s.m : -.m;r : -.f | m : - : - : - ||",
+            "d;d;d : d.d : -.d;d : -.s, | d : - : - : - || d;d;d : d.d : -.d;d : -.d | d : - : - : - ||"
           ],
-          "lyrics": "Tso- : fy : ha- : tra- | ny : ny : so- : di- | na :  :  :  || Te- : ndreo : koa : ny | va- : li- : ha- : nao ||"
+          "lyrics": "Tso-;fy-;ha- : tra-;ny : ny;so- : di- | na : :  :  || Ten-;dre-;o : koa;ny : va;li- : ha- | nao : :  :  ||"
         },
         {
           "parts": [
-            "m : s : d' : s | f : l : d' : l | r : m : - : - || m : s : d' : m ||",
-            "d : m : s : m | f : l : d : l | s : d : - : - || d : m : s : d ||",
-            "s, : d : m : d | l, : d : f : d | t, : s, : - : - || s, : d : m : s, ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | s, : d, : - : - || d, : d, : s, : d, ||"
+            "m;m;m : m.s : -.s;m : -.r | d : -.f : - : - || s, : -.m : - : s, | d : - : - : - ||",
+            "d;d;d : d.d : -.s,;d : -.t, | l, : -.d : - : - || s, : -.d : - : s, | s, : - : - : - ||",
+            "s;s;s : s.m : -.m;s : -.f | m : -.l : - : - || m : -.s : - : f | m : - : - : - ||",
+            "d;d;d : d.d : -.d;d : -.s | l, : -.f, : - : - || s, : -.s, : - : s, | d, : - : - : - ||"
           ],
-          "lyrics": "Do- : bo- : do- : bo- | ky : ny : a- : po- | ngaa- : nao :  :  || De- : rao : Je- : so ||"
-        },
-        {
-          "parts": [
-            "m : s : d' : s | f : l : d' : l | r : t : s : m || m : s : d' : s | f : l : d' : l | r : t : s : t | m : m : - : - ||",
-            "d : m : s : m | f : l : d : l | s : r : s : d || d : m : s : m | f : l : d : l | s : r : s : r | d : d : - : - ||",
-            "s, : d : m : d | l, : d : f : d | t, : r : s, : s, || s, : d : m : d | l, : d : f : d | t, : r : s, : r | s, : s, : - : - ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : d, || d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : s, | d, : d, : - : - ||"
-          ],
-          "lyrics": "De- : ra : a- : sa- | ndra- : tray : La- : za | ve- : nte- : si- : nay || Ho- : by : ka- : loi- | nay : Ho : A- : nao, | ry : A- : ndria- : ma- | ni- : tray :  :  ||"
-        },
-        {
-          "parts": [
-            "m : s : d' : s | f : l : d' : l | r : t : s : m || m : s : d' : s | f : l : d' : l | r : t : s : t | m : m : - : - ||",
-            "d : m : s : m | f : l : d : l | s : r : s : d || d : m : s : m | f : l : d : l | s : r : s : r | d : d : - : - ||",
-            "s, : d : m : d | l, : d : f : d | t, : r : s, : s, || s, : d : m : d | l, : d : f : d | t, : r : s, : r | s, : s, : - : - ||",
-            "d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : d, || d, : d, : s, : d, | f, : f, : f, : f, | s, : s, : s, : s, | d, : d, : - : - ||"
-          ],
-          "lyrics": "Foa- : na : ny : fa- | sa- : na, : o- : ta | dia : la- : sa- : na || Ve- : lo- : na : i- | ndray : Je- : so, : i- | lay : A- : ndria- : ma- | ni- : tray :  :  ||"
+          "lyrics": "Do-;bo-;do- : bo-;ky : ny;a- : po- | nga- : nao : :   || O : DE-;RAO : : JE- | SO : :  :  ||"
         }
       ],
       "verses": [
-        "2. Tsara ny Tompo mamindra fo\nSady mamonjy ny very Izy\nKoa asandrato ny feonao\nDerao JESO"
+        "Foana ny fasana, ota dia lasana\nVelona indray Jeso, ilay Andriamanitray",
+        "Tsara ny Tompo mamindra fo\nSady mamonjy ny very Izy",
+        "Koa asandrato ny feonao\nDerao JESO"
       ]
     },
     "albumCover": "album_vol2"
