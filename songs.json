@@ -6,7 +6,7 @@
     "author": "Noelson",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 16,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -86,7 +86,8 @@
         }
       ],
       "verses": []
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 2,
@@ -95,7 +96,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -178,7 +179,8 @@
         "2. Ts' isy izay tsy noheverina hitondra soa\nKanjo fitaka avokoa\nFa nanimba ny tena, saina, fo, fanahy\nNanalavitra Anao ry Mpiahy",
         "3. Soa fa teo ny sandry Masinao ry Ray\nIzay nitsotra namonjy anay\nKa ilaozanana ireo ratsy hatrizay\nIndro manolon-tena izahay"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 3,
@@ -187,7 +189,7 @@
     "author": "Noelson",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -269,7 +271,8 @@
       "verses": [
         "2. (Ilay Jesoa) Jesoa nandatsaka\nNy Rany tao Kalvary\nAry namonjy ahy vita ny famonjeny\nSy ianao ho ahy sy ianao\nDerao derao O! derao fa mendrika\nLazao isaorana mendrika isaorana"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 4,
@@ -278,7 +281,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -360,7 +363,8 @@
       "verses": [
         "2. Raha tonga ao am-ponao ny nenina\nNy mankafy fiaina-mihelina\nHande hitady fitsaharana\nMandrakizay tsy mba mifarana"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 5,
@@ -369,7 +373,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -451,7 +455,8 @@
       "verses": [
         "2. Indro efa natolony hoanao izao\nNy ainy sy ny rany izay nalatsaka (ary)\nEfa nofidiny ho mpandresy ianao\nLay Jeso lalana sy fiainana"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 6,
@@ -460,7 +465,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -542,7 +547,8 @@
       "verses": [
         "2. Indrisy fa ny olombelona ako tsa metry afapo\nNilatsaka tanatin'ny fahotana\nAgnao Andriamanitsa naniraka n'i Jesoa\nLay zanakao ho famonjena anay\n\nNadio tokoa ny fahotana\nNy ratsy aby efa nialana\nNy masonay mahiratsa satria efa mahalala\nNy fahamarinanao Jehovah Ray"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 7,
@@ -551,7 +557,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 16,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -631,7 +637,8 @@
         }
       ],
       "verses": []
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 8,
@@ -640,7 +647,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -722,7 +729,8 @@
       "verses": [
         "2. Indro sahy mijoro izahay fa navelanao\nNy helokay ka madio\nKa hitory sy hanambara\nFa lehibe ny fitiavanao\n\nJesosy o ! Indreto vonona\nKa iraho amin'ny hoavy"
       ]
-    }
+    },
+    "albumCover": "album_vol1"
   },
   {
     "id": 9,
@@ -731,7 +739,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -813,7 +821,8 @@
       "verses": [
         "3. ny fiainanay zay nandray Anao\nfeno fitiavana\nfa nananena ny lanitra\nilay paradisa soa"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 10,
@@ -822,7 +831,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -904,7 +913,8 @@
       "verses": [
         "2. Tsara ny Tompo mamindra fo\nSady mamonjy ny very Izy\nKoa asandrato ny feonao\nDerao JESO"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 11,
@@ -913,7 +923,7 @@
     "author": "Rakotomalala Faneva Harivony (Endard)",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -995,7 +1005,8 @@
       "verses": [
         "2. Fa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 12,
@@ -1004,7 +1015,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1086,7 +1097,8 @@
       "verses": [
         "2. Manetre tena, aza manda\n(Manetre tena, raiso Jesoa)\nFa ny fonao no tiany handray azy\nMiantso Jesoa mpanjaka be voninahitra re\nManolotra ny fitiavany ahy sy ianao"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 13,
@@ -1095,7 +1107,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1177,7 +1189,8 @@
       "verses": [
         "2. izahay manambara aminao androany\nindro ny filanzantsara\nAmpandrosoy ao amponao\nJesoa ka raiso ny famonjena\nka ianao no teraka indray\nary tafiditra ho zanak'Andriamanitra"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 14,
@@ -1186,7 +1199,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 17,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1268,7 +1281,8 @@
       "verses": [
         "3. Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
       ]
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 15,
@@ -1277,7 +1291,7 @@
     "author": null,
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 16,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1357,7 +1371,8 @@
         }
       ],
       "verses": []
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 16,
@@ -1366,7 +1381,7 @@
     "author": "Rajaonary Jean Robert",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 16,
+    "updatedAt": 18,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1446,7 +1461,8 @@
         }
       ],
       "verses": []
-    }
+    },
+    "albumCover": "album_vol2"
   },
   {
     "id": 17,
@@ -1527,6 +1543,7 @@
         "2. Ry olona ô, avia!\nRy tany, mifalia!\nMba henoy, ry havanay!\nMisy zaza hitanay,\nZanak'Andriamanitra\nHamoha indray ny lanitra;\nTeraka ny Tompo!\nTeraka Jeso!",
         "3. Ry Kristiana ô, hobio\nFa afaka hianao anio;\nResy izao ny rafinao,\nAfaka ota hianao,\nFahasoavan-dehibe\nNo ho anjaranao anie;\nTeraka ny Tompo!\nTeraka Jeso!"
       ]
-    }
+    },
+    "albumCover": null
   }
 ]
