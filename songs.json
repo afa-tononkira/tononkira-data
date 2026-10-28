@@ -1,12 +1,100 @@
 [
   {
+    "id": 0,
+    "meta": "app",
+    "appName": "Tononkira AFA",
+    "appVersion": "1.1-Solfa",
+    "perfBoost": true,
+    "logos": {},
+    "_aide": {
+      "_lisez_moi": "Tout ce bloc « _aide » est un COMMENTAIRE : l'application et les outils l'ignorent. Le JSON n'accepte pas de vrais commentaires (// ou /* */), c'est pourquoi l'aide est écrite dans des champs commençant par _ . Vous pouvez le modifier ou le supprimer sans aucun risque.",
+      "1_fichier": [
+        "songs.json est un TABLEAU [ ... ] d'objets. Chaque objet est soit l'entrée « meta » (la première, id 0), soit une chanson.",
+        "Une virgule sépare deux objets ; pas de virgule après le dernier. Les textes sont entre guillemets \"...\" ; un retour à la ligne dans les paroles s'écrit \\n.",
+        "Ce fichier existe en 2 exemplaires identiques : songs.json (à publier à l'adresse BASE_URL) et app/src/main/assets/songs_initial.json (livré dans l'application, pour fonctionner hors ligne dès l'installation).",
+        "Les téléphones relisent songs.json au démarrage, par « tirer pour rafraîchir » et toutes les 6 h. Aucune mise à jour de l'application n'est nécessaire."
+      ],
+      "2_entree_meta": {
+        "id": "Toujours 0 : l'entrée meta n'est pas une chanson.",
+        "meta": "Toujours \"app\" : c'est ce qui identifie cette entrée. Une seule entrée meta par fichier.",
+        "appName": "Nom affiché de l'application (pied du menu, textes de partage). Vide ou absent = on garde la valeur actuelle. Le nom sous l'icône du téléphone ne peut PAS changer à distance.",
+        "appVersion": "Version affichée (pastille du menu et page « A propos »), ex. \"1.1-Solfa\" ; le « v » est ajouté par l'application. Vide ou absent = version intégrée à l'APK.",
+        "logos": "Remplace des images de l'application (voir 3_logos). {} = aucun remplacement.",
+        "commande": "python tools/set_app_info.py --name \"...\" --version 1.2-Solfa   (modifie les 2 fichiers d'un coup)",
+        "perfBoost": "true (défaut) ou false. Mode performance pour Android 12 et plus : audio piano en faible latence avec priorité audio, liste des chansons plus fluide. Sans effet sur Android 11 et moins. false = coupe ces optimisations (utile si un téléphone précis a un souci) ; effet au prochain lancement de l'application. Commande : python tools/set_app_info.py --perf off"
+      },
+      "3_logos": {
+        "principe": "\"cle\": \"valeur\". La valeur est un chemin relatif à BASE_URL (ex. \"logos/title.png\", fichier publié à côté de songs.json) ou une adresse complète \"https://...\". Une valeur vide \"\" = retour à l'image d'origine de l'application.",
+        "title": "titre « Tononkira AFA » (ouverture, menu, barre du haut, A propos)",
+        "book": "livre (ouverture, barres du haut, A propos)",
+        "clef": "clé de sol (ouverture, menu)",
+        "fjkm": "bandeau FJKM (ouverture)",
+        "verse": "verset (ouverture)",
+        "sub1": "sous-titre 1 (ouverture, menu)",
+        "sub2": "sous-titre 2 (ouverture)",
+        "choir": "photo de la chorale (ouverture)",
+        "background": "image de fond (liste, chansons, A propos)",
+        "banner": "bandeau photo de l'en-tête du menu",
+        "conseil": "PNG transparent pour les logos, JPG pour choir/background/banner. Un logo remplacé garde ses propres couleurs. L'icône du lanceur Android ne peut pas être changée à distance.",
+        "exemple": "\"logos\": { \"title\": \"logos/title.png\", \"book\": \"https://monsite.org/livre.png\", \"clef\": \"\" }",
+        "commande": "python tools/set_app_info.py --logo title=mon_titre.png   (ou --logo title= pour revenir à l'original)"
+      },
+      "4_chanson": {
+        "id": "Numéro UNIQUE de la chanson (entier ≥ 1). Une nouvelle chanson = un nouvel id jamais utilisé.",
+        "title": "Titre (obligatoire). Une chanson sans titre ou sans paroles est ignorée par l'application.",
+        "lyrics": "Paroles (obligatoire). \\n = retour à la ligne ; une ligne vide (\\n\\n) sépare les couplets/refrains.",
+        "author": "Auteur / compositeur, affiché sous les paroles (« A/C: ... »). null = rien.",
+        "translator": "Traducteur, affiché « Traduction : ... ». null = rien.",
+        "album": "Nom de l'album, ex. \"Album volume 1\". Les chansons qui ont EXACTEMENT le même texte partagent la même pochette.",
+        "albumCover": "Pochette de l'album : nom d'image livrée avec l'app (\"album_vol1\"), ou \"covers/vol3.jpg\" / \"https://...\" (téléchargée puis gardée en cache). Seule la chanson la plus récente de l'album compte.",
+        "updatedAt": "Numéro de version de la chanson. À AUGMENTER à chaque modification (paroles, solfa, pochette...) : sinon les téléphones ne la mettent pas à jour. Outil : python tools/check_songs.py --apply",
+        "solfa": "Partition solfa : null = pas de partition, sinon un objet (voir 5_solfa).",
+        "ajouter": "Copier une chanson existante, changer id/title/lyrics, mettre un updatedAt supérieur aux autres.",
+        "supprimer": "Remplacer toute la chanson par { \"id\": 12, \"deleted\": true } : elle disparaît des téléphones."
+      },
+      "5_solfa": {
+        "ref": "Référence du recueil, ex. \"FFPM 66\" (facultatif, null possible).",
+        "keyName": "Tonalité affichée, ex. \"Do dia F\".",
+        "tonic": "Note qui correspond au « Do » pour l'AUDIO : \"C\", \"F\", \"Bb\", \"F#\"... (sinon déduite de keyName).",
+        "meter": "Mesure affichée, ex. \"4/4\", \"6/4\".",
+        "beatsPerBar": "Nombre de temps par mesure dans la grille (ex. 4).",
+        "bpm": "Battements par minute : vitesse de l'audio piano (un temps de la grille).",
+        "tempo": "Tempo affiché, ex. \"♩ = 76\" (même valeur que bpm).",
+        "playback": "Réglages de l'audio : { \"instrument\": \"piano\" (seul géré), \"countIn\": true (accord de tonalité + décompte d'une mesure), \"singNames\": true (chante do, ré, mi... sur chaque note) }.",
+        "origin": "Liste de lignes affichées à GAUCHE de l'en-tête de la partition (ex. origine du chant). null = rien.",
+        "composer": "Texte affiché AU CENTRE de l'en-tête (ex. \"P.M.\").",
+        "arranger": "Liste de lignes affichées à DROITE de l'en-tête.",
+        "voices": "Noms des voix, dans le MÊME ORDRE que « parts » : [\"S\",\"A\",\"T\",\"B\"] (soprano, alto, ténor, basse).",
+        "systems": "Liste des lignes de portée. Chaque ligne = { \"parts\": [une chaîne par voix], \"lyrics\": \"paroles sur la même grille\" }.",
+        "verses": "Couplets suivants affichés sous la partition, ex. [\"2. ...\", \"3. ...\"]."
+      },
+      "6_notation_solfa": {
+        "exemple": "d : - : d | m : - : f | s : - : l | s : - : - ||",
+        "|": "barre de mesure ; || = double barre (la dernière mesure se termine toujours par ||).",
+        ":": "sépare les temps. \"-\" = note tenue. \": d\" = temps vide puis d.",
+        "notes": "d r m f s l t (do ré mi fa sol la si). Chromatiques : di ra ri ma fi se si le li ta.",
+        "octaves": "d, = octave grave ; d' = octave aigu (d,, et d'' possibles).",
+        "subdivisions": "a.b = deux demi-temps ; a;b;c = parts égales (quarts, triolet) ; \"m.\" = m puis silence ; \".s\" = silence puis s.",
+        "regle_importante": "Toutes les voix d'une même ligne doivent avoir le MÊME nombre de temps, et les paroles (lyrics) suivent exactement la même grille que les voix ; un temps sans syllabe se laisse vide (\": :\").",
+        "anacrouse": "Une 1re mesure plus courte que beatsPerBar est jouée telle quelle.",
+        "verification": "python tools/check_songs.py  (signale notes inconnues, voix désynchronisées, images manquantes, updatedAt oublié)"
+      },
+      "7_publier": [
+        "1) Modifier songs.json (et son double assets/songs_initial.json, ou laisser les outils le faire).",
+        "2) python tools/check_songs.py --apply   → vérifie et augmente updatedAt des chansons modifiées.",
+        "3) Publier songs.json (+ dossiers covers/ et logos/ s'ils sont utilisés) à l'adresse BASE_URL définie dans app/build.gradle.kts.",
+        "Documentation complète : README_AUTONOME.md, README_SOLFA.md, README_ALBUMS.md."
+      ]
+    }
+  },
+  {
     "id": 1,
     "title": "Injao mandona",
     "lyrics": "Injao mibitsika ao am-ponao ka mandona ao\nIlay Jesosy be fitia moa henoinao\nMitalaho sy miandry anao\nO! Valio ka mba vohao\nO! Vohay re o! vohay Jesosy Tompo\n\nInjao njao mandona Jesoa\nHenoy njao mandona ao am-po\nHenoy fa Jesosy no mandona\n\nAza miandry ela fa vohay re Jesoa\nAza miandry ela intsony fa anio vohay\nSao anio no lay fotoana mety re\nAza avela hitalaho, lay Jesosy tia anao\nO! vohay re o! vohay Jesosy Tompo\n\nInjao njao mandona Jesoa\nHenoy njao mandona ao am-po\nHenoy fa Jesosy no mandona",
     "author": "Noelson",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -87,7 +175,7 @@
       ],
       "verses": []
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 2,
@@ -96,7 +184,7 @@
     "author": "Jean Marie",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 21,
+    "updatedAt": 22,
     "solfa": {
       "ref": null,
       "keyName": "Do dia F",
@@ -180,7 +268,7 @@
         "3. Soa fa teo ny sandry Masinao ry Ray\nIzay nitsotra namonjy anay\nKa ilaozanana ireo ratsy hatrizay\nIndro manolon-tena izahay"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 3,
@@ -189,7 +277,7 @@
     "author": "Noelson",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -272,7 +360,7 @@
         "2. (Ilay Jesoa) Jesoa nandatsaka\nNy Rany tao Kalvary\nAry namonjy ahy vita ny famonjeny\nSy ianao ho ahy sy ianao\nDerao derao O! derao fa mendrika\nLazao isaorana mendrika isaorana"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 4,
@@ -281,7 +369,7 @@
     "author": "Désiré Alphonse",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -364,7 +452,7 @@
         "2. Raha tonga ao am-ponao ny nenina\nNy mankafy fiaina-mihelina\nHande hitady fitsaharana\nMandrakizay tsy mba mifarana"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 5,
@@ -373,7 +461,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 21,
+    "updatedAt": 22,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -456,7 +544,7 @@
         "2. Indro efa natolony hoanao izao\nNy ainy sy ny rany izay nalatsaka (ary)\nEfa nofidiny ho mpandresy ianao\nLay Jeso lalana sy fiainana"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 6,
@@ -465,7 +553,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 21,
+    "updatedAt": 22,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -548,7 +636,7 @@
         "2. Indrisy fa ny olombelona ako tsa metry afapo\nNilatsaka tanatin'ny fahotana\nAgnao Andriamanitsa naniraka n'i Jesoa\nLay zanakao ho famonjena anay\n\nNadio tokoa ny fahotana\nNy ratsy aby efa nialana\nNy masonay mahiratsa satria efa mahalala\nNy fahamarinanao Jehovah Ray"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 7,
@@ -557,7 +645,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -638,7 +726,7 @@
       ],
       "verses": []
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 8,
@@ -647,7 +735,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 1",
-    "updatedAt": 21,
+    "updatedAt": 22,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -730,7 +818,7 @@
         "2. Indro sahy mijoro izahay fa navelanao\nNy helokay ka madio\nKa hitory sy hanambara\nFa lehibe ny fitiavanao\n\nJesosy o ! Indreto vonona\nKa iraho amin'ny hoavy"
       ]
     },
-    "albumCover": "covers/album_volume_1.jpg"
+    "albumCover": "album_vol1"
   },
   {
     "id": 9,
@@ -739,7 +827,7 @@
     "author": "Désiré Alphonse",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -822,7 +910,7 @@
         "3. ny fiainanay zay nandray Anao\nfeno fitiavana\nfa nananena ny lanitra\nilay paradisa soa"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 10,
@@ -831,7 +919,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia Ab na G",
@@ -898,7 +986,7 @@
         "Koa asandrato ny feonao\nDerao JESO"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 11,
@@ -907,7 +995,7 @@
     "author": "Rakotomalala Faneva Harivony (Endard)",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -990,7 +1078,7 @@
         "2. Fa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 12,
@@ -999,7 +1087,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1082,7 +1170,7 @@
         "2. Manetre tena, aza manda\n(Manetre tena, raiso Jesoa)\nFa ny fonao no tiany handray azy\nMiantso Jesoa mpanjaka be voninahitra re\nManolotra ny fitiavany ahy sy ianao"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 13,
@@ -1091,7 +1179,7 @@
     "author": "Razaka Rivoniaina",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1174,7 +1262,7 @@
         "2. izahay manambara aminao androany\nindro ny filanzantsara\nAmpandrosoy ao amponao\nJesoa ka raiso ny famonjena\nka ianao no teraka indray\nary tafiditra ho zanak'Andriamanitra"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 14,
@@ -1183,7 +1271,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1266,7 +1354,7 @@
         "3. Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
       ]
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 15,
@@ -1275,7 +1363,7 @@
     "author": "Rajaonary Jean Robert",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 20,
+    "updatedAt": 21,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1356,7 +1444,7 @@
       ],
       "verses": []
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 16,
@@ -1365,7 +1453,7 @@
     "author": "Rajaonary Jean Robert",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 19,
+    "updatedAt": 20,
     "solfa": {
       "ref": null,
       "keyName": "Do dia C",
@@ -1446,7 +1534,7 @@
       ],
       "verses": []
     },
-    "albumCover": "covers/album_volume_2.jpg"
+    "albumCover": "album_vol2"
   },
   {
     "id": 17,
