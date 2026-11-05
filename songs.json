@@ -193,7 +193,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 22,
+    "updatedAt": 30,
     "solfa": {
       "ref": null,
       "keyName": "Do dia Ab na G",
@@ -201,21 +201,12 @@
       "meter": "4/4",
       "beatsPerBar": 4,
       "bpm": 110,
-      "tempo": "♩ = 72",
-      "playback": {
-        "instrument": "piano",
-        "countIn": true,
-        "singNames": true
-      },
+      "tempo": "♩ = 110",
+      "playback": { "instrument": "piano", "countIn": true, "singNames": true },
       "origin": null,
       "composer": null,
       "arranger": null,
-      "voices": [
-        "S",
-        "A",
-        "T",
-        "B"
-      ],
+      "voices": ["S", "A", "T", "B"],
       "systems": [
         {
           "parts": [
@@ -224,7 +215,8 @@
             "d, : -.d : -.d,;d : -.d | d, : - : - : - || s : -.s : -.s;f : -.l | s : - : - : - ||",
             "d, : -.d, : -.d,;d, : -.d, | d, : - : - : - || d : -.d : -.d;d : -.d | d : - : - : - ||"
           ],
-          "lyrics": "De- : ra : a-;sa- : ndra- | tray : :  :  || La- : za : ve-;nte- : si- | nay : :  :  ||"
+          "lyrics": "De- : ra : a-;sa- : ndra- | tray : :  :  || La- : za : ve-;nte- : si- | nay : :  :  ||",
+          "repeatLyrics": "Dera asandratray Laza ventesinay\nHoby kaloinay Ho Anao, ry Andriamanitray"
         },
         {
           "parts": [
@@ -233,7 +225,8 @@
             "m : -.m : -.m;r : -.m | f : - : - : f || s. : .m : -.m;m : -.r | m : - : - : - ||",
             "d : -.d : -.d;d : -.d | f, : - : - : f, || s,. : .s, : -.s,;s, : -.s, | d, : - : - : - ||"
           ],
-          "lyrics": "Ho- : by : ka-;lo- : i- | nay : :  : hoa || nao : ry : A-;ndria : ma- | ni-tray : :  :  ||"
+          "lyrics": "Ho- : by : ka-;lo- : i- | nay : :  : hoa || nao : ry : A-;ndria : ma- | ni-tray : :  :  ||",
+          "repeatLyrics": "Foana ny fasana, ota dia lasana\nVelona indray Jeso, ilay Andriamanitray"
         },
         {
           "parts": [
@@ -242,7 +235,8 @@
             "s;s;s : s.m : -.m;s : -.f | m : - : - : - || s;s;s : s.m : -.m;r : -.f | m : - : - : - ||",
             "d;d;d : d.d : -.d;d : -.s, | d : - : - : - || d;d;d : d.d : -.d;d : -.d | d : - : - : - ||"
           ],
-          "lyrics": "Tso-;fy-;ha- : tra-;ny : ny;so- : di- | na : :  :  || Ten-;dre-;o : koa;ny : va;li- : ha- | nao : :  :  ||"
+          "lyrics": "Tso-;fy-;ha- : tra-;ny : ny;so- : di- | na : :  :  || Ten-;dre-;o : koa;ny : va;li- : ha- | nao : :  :  ||",
+          "repeatLyrics": "Tsara ny Tompo mamindra fo\nSady mamonjy ny very Izy"
         },
         {
           "parts": [
@@ -251,7 +245,9 @@
             "s;s;s : s.m : -.m;s : -.f | m : -.l : - : - || m : -.s : - : f | m : - : - : - ||",
             "d;d;d : d.d : -.d;d : -.s | l, : -.f, : - : - || s, : -.s, : - : s, | d, : - : - : - ||"
           ],
-          "lyrics": "Do-;bo-;do- : bo-;ky : ny;a- : po- | nga- : nao : :   || O : DE-;RAO : : JE- | SO : :  :  ||"
+          "lyrics": "Do-;bo-;do- : bo-;ky : ny;a- : po- | nga- : nao : :   || O : DE-;RAO : : JE- | SO : :  :  ||",
+          "mark": "dc",
+          "repeatLyrics": "Koa asandrato ny feonao\nDerao JESO"
         }
       ],
       "verses": [
