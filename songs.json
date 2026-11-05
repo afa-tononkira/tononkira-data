@@ -359,8 +359,8 @@
       "tonic": "A",
       "meter": "12/8",
       "beatsPerBar": 4,
-      "bpm": 60,
-      "tempo": "♩. = 60",
+      "bpm": 110,
+      "tempo": "♩. = 110",
       "playback": {
         "instrument": "piano",
         "countIn": true,
