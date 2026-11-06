@@ -465,7 +465,7 @@
   "playback": { "instrument": "piano", "countIn": true, "singNames": true },
   "origin": null,
   "composer": "Jean Robert",
-  "arranger": ["AFA (Antsan'ny Famonjena)", "FJKM Ambohipo (2016)"],
+  "arranger": ["AFA (Antsan'ny Famonjena)"],
   "voices": ["S", "A", "T", "B"],
   "systems": [
     {
