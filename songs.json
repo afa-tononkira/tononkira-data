@@ -454,7 +454,63 @@
     "translator": null,
     "album": "Album volume 2",
     "updatedAt": 22,
-    "solfa": null,
+    "solfa": {
+  "ref": null,
+  "keyName": "Do dia C",
+  "tonic": "C",
+  "meter": "4/4",
+  "beatsPerBar": 4,
+  "bpm": 80,
+  "tempo": "♩ = 80",
+  "playback": { "instrument": "piano", "countIn": true, "singNames": true },
+  "origin": null,
+  "composer": "Jean Robert",
+  "arranger": ["AFA (Antsan'ny Famonjena)", "FJKM Ambohipo (2016)"],
+  "voices": ["S", "A", "T", "B"],
+  "systems": [
+    {
+      "parts": [
+        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.d' : l;-;-;s : f.m | r : - ||",
+        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : f;-;-;m : m.r | t, : - ||",
+        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.t, | s, : - ||",
+        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.s, | s,, : - ||"
+      ],
+      "lyrics": "1. No-tia-vi- | n'An-dria-ma-ni-tra fa-tra-tra- | ho |  No-me-ny a-hy | ny za-na-bi-la-hi-to-ka-na",
+      "repeatLyrics": "Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko"
+    },
+    {
+      "parts": [
+        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.m : f;-;-;f : f.r | d : - : - : - ||",
+        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : r;-;-;r : r.s, | s, : - : - : - ||",
+        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.m, : t,;-;-;t, : t,.t, | m, : - : - : - ||",
+        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : s,;-;-;s, : s,.s, | d, : - : - : - ||"
+      ],
+      "lyrics": "Na-foy ny ai-ny ha-monjy a-hy sa-kai-za-ny |  Fi-tia-van-de-hi-be tsy mi-sy toy i-za-ny !",
+      "repeatLyrics": "Fananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay"
+    },
+    {
+      "parts": [
+        "s : t.d' | r';-;-;r' : r'.t : d';-;-;t : d'.t | s : - : t.d' | r';-;-;r' : r'.s : r';-;-;t : d'.s | d' : - ||",
+        "m : r.m | f;-;-;f : f.s : l;-;-;s : l.s | m : - : r.m | f;-;-;f : f.m : f;-;-;f : f.m | m : - ||",
+        "d : t,.d | r;-;-;r : r.d : d;-;-;d : d.d | d : - : t,.d | r;-;-;r : r.d : r;-;-;r : r.d | d : - ||",
+        "d, : s,.d, | s,;-;-;s, : s,.s, : l,;-;-;l, : f,.f, | d, : - : s,.d, | s,;-;-;s, : s,.s, : s,;-;-;s, : s,.s, | d, : - ||"
+      ],
+      "lyrics": "Fiverenana : Sa-tria ma-la-la eo i-ma-so-nao a-ho Ray ô | Be vo-ni-na-hi-tra ho sa-dy ti-a-nao"
+    },
+    {
+      "parts": [
+        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - : - : t.d' | r';-;-;r' : r'.t : l;-;-;s : f.m | d' : - : - : - ||",
+        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - : - : r.m | f;-;-;f : f.s : f;-;-;m : r.d | s : - : - : - ||",
+        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - : - : t,.d | r;-;-;r : r.d : d;-;-;d : t,.s, | m : - : - : - ||",
+        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - : - : s,.d, | s,;-;-;s, : s,.s, : f,;-;-;f, : s,.s,, | d, : - : - : - ||"
+      ],
+      "lyrics": "Tsy a-zo san-dai-na vo-la-me-na va-to-soa (Ny te-na-ko) | Fa-ny ra-nao Je-soy no tom-bam-bi-di-ko !"
+    }
+  ],
+  "verses": [
+    "2. Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko\nFananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay"
+  ]
+},
     "albumCover": null
   }
 ]
