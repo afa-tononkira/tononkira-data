@@ -65,19 +65,18 @@
         "composer": "Texte affiché AU CENTRE de l'en-tête (ex. \"P.M.\").",
         "arranger": "Liste de lignes affichées à DROITE de l'en-tête.",
         "voices": "Noms des voix, dans le MÊME ORDRE que « parts » : [\"S\",\"A\",\"T\",\"B\"] (soprano, alto, ténor, basse).",
-        "systems": "Liste des lignes de portée. Chaque ligne = { \"parts\": [une chaîne par voix], \"lyrics\": \"paroles sur la même grille\" }.",
+        "systems": "Liste de systèmes indépendants. Chaque système peut contenir tracks (format dynamique) et/ou parts (ancien format conservé pour compatibilité).",
         "verses": "Couplets suivants affichés sous la partition, ex. [\"2. ...\", \"3. ...\"]."
       },
       "6_notation_solfa": {
-        "exemple": "d : - : d | m : - : f | s : - : l | s : - : - ||",
-        "|": "barre de mesure ; || = double barre (la dernière mesure se termine toujours par ||).",
-        ":": "sépare les temps. \"-\" = note tenue. \": d\" = temps vide puis d.",
+        "exemple": "d : - : d | m : - : f ||",
+        "barres": "| = séparation de mesure ; || = double barre finale.",
         "notes": "d r m f s l t (do ré mi fa sol la si). Chromatiques : di ra ri ma fi se si le li ta.",
-        "octaves": "d, = octave grave ; d' = octave aigu (d,, et d'' possibles).",
-        "subdivisions": "a.b = deux demi-temps ; a;b;c = parts égales (quarts, triolet) ; \"m.\" = m puis silence ; \".s\" = silence puis s.",
-        "regle_importante": "Toutes les voix d'une même ligne doivent avoir le MÊME nombre de temps, et les paroles (lyrics) suivent exactement la même grille que les voix ; un temps sans syllabe se laisse vide (\": :\").",
-        "anacrouse": "Une 1re mesure plus courte que beatsPerBar est jouée telle quelle.",
-        "verification": "python tools/check_songs.py  (signale notes inconnues, voix désynchronisées, images manquantes, updatedAt oublié)"
+        "octaves": "d, = octave grave ; d' = octave aiguë.",
+        "subdivisions": "a.b = deux demi-temps ; a;b;c = parts égales ; '-' = tenue/silence selon le contexte de la notation.",
+        "dynamique": "Dans le format tracks, chaque voix possède sa propre liste measures. Les voix peuvent avoir des nombres de mesures et des durées différents.",
+        "paroles": "lyrics et lyricSegments sont indépendants des voix. Aucun alignement mesure par mesure ni nombre égal de syllabes/temps n'est exigé.",
+        "compatibilite": "parts et lyrics restent présents pour les anciennes versions. Les nouvelles versions doivent privilégier tracks et lyricSegments."
       },
       "7_publier": [
         "1) Modifier songs.json (et son double assets/songs_initial.json, ou laisser les outils le faire).",
@@ -202,11 +201,20 @@
       "beatsPerBar": 4,
       "bpm": 110,
       "tempo": "♩ = 110",
-      "playback": { "instrument": "piano", "countIn": true, "singNames": true },
+      "playback": {
+        "instrument": "piano",
+        "countIn": true,
+        "singNames": true
+      },
       "origin": null,
       "composer": null,
       "arranger": null,
-      "voices": ["S", "A", "T", "B"],
+      "voices": [
+        "S",
+        "A",
+        "T",
+        "B"
+      ],
       "systems": [
         {
           "parts": [
@@ -258,149 +266,149 @@
     },
     "albumCover": null
   },
-{
-  "id": 11,
-  "title": "Fahatsiarovan-tena",
-  "lyrics": "1- Mety ho kivy indraindray, tena reraka am-panahy\nMila ho ketraka nohon'ny fiainana ety\nTsisy fiadanam-po sy miady saina koa\nRakotr'aizina jamban'ny fahazarana\n\nRaha lavitra anao aho : feno ahiahy\nMisaraka aminao aho : dia very fanahy\nNy fahotako ihany Jeso : nampanalavitra ahy\nTsy fanekeko anao tompo o ! no mampahory ahy\n\n2- Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay\nFa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao\n\nFa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-",
-  "author": "Rakotomalala Faneva Harivony (Endard)",
-  "translator": null,
-  "album": "Album volume 2",
-  "updatedAt": 32,
-  "solfa": {
-    "ref": null,
-    "keyName": "Do dia G",
-    "tonic": "G",
-    "meter": "4/4",
-    "beatsPerBar": 4,
-    "bpm": 80,
-    "tempo": "♩ = 80",
-    "playback": {
-      "instrument": "piano",
-      "countIn": true,
-      "singNames": true
+  {
+    "id": 11,
+    "title": "Fahatsiarovan-tena",
+    "lyrics": "1- Mety ho kivy indraindray, tena reraka am-panahy\nMila ho ketraka nohon'ny fiainana ety\nTsisy fiadanam-po sy miady saina koa\nRakotr'aizina jamban'ny fahazarana\n\nRaha lavitra anao aho : feno ahiahy\nMisaraka aminao aho : dia very fanahy\nNy fahotako ihany Jeso : nampanalavitra ahy\nTsy fanekeko anao tompo o ! no mampahory ahy\n\n2- Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay\nFa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao\n\nFa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-",
+    "author": "Rakotomalala Faneva Harivony (Endard)",
+    "translator": null,
+    "album": "Album volume 2",
+    "updatedAt": 32,
+    "solfa": {
+      "ref": null,
+      "keyName": "Do dia G",
+      "tonic": "G",
+      "meter": "4/4",
+      "beatsPerBar": 4,
+      "bpm": 80,
+      "tempo": "♩ = 80",
+      "playback": {
+        "instrument": "piano",
+        "countIn": true,
+        "singNames": true
+      },
+      "origin": null,
+      "composer": "Faneva",
+      "arranger": [
+        "Endard"
+      ],
+      "voices": [
+        "S",
+        "A",
+        "T",
+        "B"
+      ],
+      "systems": [
+        {
+          "_label": "Unisson Femmes",
+          "voices": [
+            "Femmes"
+          ],
+          "_chords": [
+            "G",
+            "G",
+            "Em Am",
+            "D7"
+          ],
+          "parts": [
+            "s,;s, | s,.d;d : -.t, : d : -.s,;s, | s,.d;d : -.t, : d : -.d;r | m.m;m : -.m;m : f.m;r : -.l, | r : - : - : - ||"
+          ],
+          "lyrics": "Me-;ty | ho;ki-;vy : in- : drain-dray : te-;na | re-;ra-;ka : am- : pa-nahy : mi-;la | ho;ke-;tra- : ka;no- : hon'ny;fi-ai;na : na- | e-ty :  :  :  ||",
+          "repeatLyrics": "Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay"
+        },
+        {
+          "_label": "Unisson Hommes",
+          "voices": [
+            "Hommes"
+          ],
+          "_chords": [
+            "G",
+            "G",
+            "Em Am",
+            "D7"
+          ],
+          "parts": [
+            "s,;s, | s,.d;d : -.t, : d : -.s,;s, | s,.d;d : -.t, : d : -.d;r | m.m;m : -.m;m : f.m;r : -.l, | r : - : - : - ||"
+          ],
+          "lyrics": "Tsi-;sy | fi;a-;da- : nam- : po : sy;mi- | a-;dy;sai- : na- : ko : a;ra- | kotr'ai;zi-;na : jam;ban'ny : fa;ha;za : ra- | na :  :  :  ||",
+          "repeatLyrics": "Fa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao"
+        },
+        {
+          "_label": "Raha lavitra... (segno)",
+          "mark": "segno",
+          "voices": [
+            "S",
+            "A",
+            "T",
+            "B"
+          ],
+          "parts": [
+            ".s, | s,;l,.t,;s, : s : - : r | - : s.f;m : -.f : r.s, | s,;l,.t,;s, : s : - : r | -.s, : s.f;m : -.f : r.s, ||",
+            ".s, | s,;l,.t,;s, : d : - : t, | - : d.d;d : -.d : t,.s, | s,;l,.t,;s, : d : - : t, | -.s, : d.d;d : -.d : t,.s, ||",
+            ".s, | s,;l,.t,;s, : m : - : f | - : m.l;s : -.l : f.s, | s,;l,.t,;s, : m : - : f | -.s, : m.l;s : -.l : f.s, ||",
+            ".s, | s,;l,.t,;s, : d : - : s, | - : d.d;d : -.d : s,.s, | s,;l,.t,;s, : d : - : s, | -.s, : d.d;d : -.d : s,.s, ||"
+          ],
+          "lyrics": "Ra-ha | la;vi;tra;A- : nao :  : a-ho |  : fe;no;a- : hi- : a-hy;Mi- | sa;ra;k'A;mi- : nao :  : a-ho | dia : ve;ry;fa- : nahy : ;Ny- ||",
+          "repeatLyrics": "Fa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa"
+        },
+        {
+          "_label": "Ny fahotako... (D.S.)",
+          "mark": "ds",
+          "voices": [
+            "S",
+            "A",
+            "T",
+            "B"
+          ],
+          "parts": [
+            "s,;l,.t,;s, : m : -.m : f | -.r : m.m;s : -.m : f.s, | s,;l,.t,;s, : m : -.m : r.s,;s, | f;m.r;t, : d : - : - ||",
+            "s,;l,.t,;s, : d : -.d : d | -.l, : d.d;d : -.d : t,.s, | s,;l,.t,;s, : d : -.d : t,.s,;s, | d;d.l,;s, : s, : - : - ||",
+            "s,;l,.t,;s, : s : -.s : l | -.f : s.s;m : -.s : f.s, | s,;l,.t,;s, : s : -.s : f.f;f | l,;s.f;r : m : - : - ||",
+            "s,;l,.t,;s, : d : -.d : f | -.f : s,.s,;s, : -.s, : s,.s, | s,;l,.t,;s, : d : -.d : s,.s,;s, | s,;s,.s,;s, : d : - : - ||"
+          ],
+          "lyrics": "fa;ho;ta;ko- : i- : ha- : ny | Je-soa : nam-;pa-;na- : la- : vi-tra-a-hy;Tsy | fa;ne;ke;ko : A- : nao : Tom-;po-;o | no;mam;pa;ho- : ry-a-hy :  :  ||",
+          "repeatLyrics": "Ambany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
+        },
+        {
+          "_label": "Famaranana",
+          "voices": [
+            "S",
+            "A",
+            "T",
+            "B"
+          ],
+          "parts": [
+            "d : - : -.s, : s,;l,.t,;s, | m : -.m : r.s,;s, : f;m.r;t, ||",
+            "s, : - : -.s, : s,;l,.t,;s, | d : -.d : t,.s,;s, : d;d.l,;s, ||",
+            "m : - : -.s, : s,;l,.t,;s, | s : -.s : f.f;f : l,;s.f;r ||",
+            "d : - : -.s, : s,;l,.t,;s, | d : -.d : s,.s,;s, : s,;s,.s,;s, ||"
+          ],
+          "lyrics": "to :  : Mi- : ra;y;A;mi- | nao : Je-soa : fa;ni;ria : ko;di;a;ho ||"
+        },
+        {
+          "_label": "Fin",
+          "mark": "fin",
+          "voices": [
+            "S",
+            "A",
+            "T",
+            "B"
+          ],
+          "parts": [
+            "d : - : -.s, : s,;l,.t,;s, | m : -.m : r : - | d : - : - : - ||",
+            "s, : - : -.s, : s,;l,.t,;s, | d : -.d : t, : - | s, : - : - : - ||",
+            "m : - : -.s, : s,;l,.t,;s, | s : -.s : f : - | m : - : - : - ||",
+            "d : - : -.s, : s,;l,.t,;s, | d : -.d : s, : - | d : - : - : - ||"
+          ],
+          "lyrics": "to :  : Mi- : ra;y;A;mi- | nao : Je- : soa :  |  ||"
+        }
+      ],
+      "verses": [
+        "2- Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay\nFa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao\n\nFa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
+      ]
     },
-    "origin": null,
-    "composer": "Faneva",
-    "arranger": [
-      "Endard"
-    ],
-    "voices": [
-      "S",
-      "A",
-      "T",
-      "B"
-    ],
-    "systems": [
-      {
-        "_label": "Unisson Femmes",
-        "voices": [
-          "Femmes"
-        ],
-        "_chords": [
-          "G",
-          "G",
-          "Em Am",
-          "D7"
-        ],
-        "parts": [
-          "s,;s, | s,.d;d : -.t, : d : -.s,;s, | s,.d;d : -.t, : d : -.d;r | m.m;m : -.m;m : f.m;r : -.l, | r : - : - : - ||"
-        ],
-        "lyrics": "Me-;ty | ho;ki-;vy : in- : drain-dray : te-;na | re-;ra-;ka : am- : pa-nahy : mi-;la | ho;ke-;tra- : ka;no- : hon'ny;fi-ai;na : na- | e-ty :  :  :  ||",
-        "repeatLyrics": "Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay"
-      },
-      {
-        "_label": "Unisson Hommes",
-        "voices": [
-          "Hommes"
-        ],
-        "_chords": [
-          "G",
-          "G",
-          "Em Am",
-          "D7"
-        ],
-        "parts": [
-          "s,;s, | s,.d;d : -.t, : d : -.s,;s, | s,.d;d : -.t, : d : -.d;r | m.m;m : -.m;m : f.m;r : -.l, | r : - : - : - ||"
-        ],
-        "lyrics": "Tsi-;sy | fi;a-;da- : nam- : po : sy;mi- | a-;dy;sai- : na- : ko : a;ra- | kotr'ai;zi-;na : jam;ban'ny : fa;ha;za : ra- | na :  :  :  ||",
-        "repeatLyrics": "Fa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao"
-      },
-      {
-        "_label": "Raha lavitra... (segno)",
-        "mark": "segno",
-        "voices": [
-          "S",
-          "A",
-          "T",
-          "B"
-        ],
-        "parts": [
-          ".s, | s,;l,.t,;s, : s : - : r | - : s.f;m : -.f : r.s, | s,;l,.t,;s, : s : - : r | -.s, : s.f;m : -.f : r.s, ||",
-          ".s, | s,;l,.t,;s, : d : - : t, | - : d.d;d : -.d : t,.s, | s,;l,.t,;s, : d : - : t, | -.s, : d.d;d : -.d : t,.s, ||",
-          ".s, | s,;l,.t,;s, : m : - : f | - : m.l;s : -.l : f.s, | s,;l,.t,;s, : m : - : f | -.s, : m.l;s : -.l : f.s, ||",
-          ".s, | s,;l,.t,;s, : d : - : s, | - : d.d;d : -.d : s,.s, | s,;l,.t,;s, : d : - : s, | -.s, : d.d;d : -.d : s,.s, ||"
-        ],
-        "lyrics": "Ra-ha | la;vi;tra;A- : nao :  : a-ho |  : fe;no;a- : hi- : a-hy;Mi- | sa;ra;k'A;mi- : nao :  : a-ho | dia : ve;ry;fa- : nahy : ;Ny- ||",
-        "repeatLyrics": "Fa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa"
-      },
-      {
-        "_label": "Ny fahotako... (D.S.)",
-        "mark": "ds",
-        "voices": [
-          "S",
-          "A",
-          "T",
-          "B"
-        ],
-        "parts": [
-          "s,;l,.t,;s, : m : -.m : f | -.r : m.m;s : -.m : f.s, | s,;l,.t,;s, : m : -.m : r.s,;s, | f;m.r;t, : d : - : - ||",
-          "s,;l,.t,;s, : d : -.d : d | -.l, : d.d;d : -.d : t,.s, | s,;l,.t,;s, : d : -.d : t,.s,;s, | d;d.l,;s, : s, : - : - ||",
-          "s,;l,.t,;s, : s : -.s : l | -.f : s.s;m : -.s : f.s, | s,;l,.t,;s, : s : -.s : f.f;f | l,;s.f;r : m : - : - ||",
-          "s,;l,.t,;s, : d : -.d : f | -.f : s,.s,;s, : -.s, : s,.s, | s,;l,.t,;s, : d : -.d : s,.s,;s, | s,;s,.s,;s, : d : - : - ||"
-        ],
-        "lyrics": "fa;ho;ta;ko- : i- : ha- : ny | Je-soa : nam-;pa-;na- : la- : vi-tra-a-hy;Tsy | fa;ne;ke;ko : A- : nao : Tom-;po-;o | no;mam;pa;ho- : ry-a-hy :  :  ||",
-        "repeatLyrics": "Ambany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
-      },
-      {
-        "_label": "Famaranana",
-        "voices": [
-          "S",
-          "A",
-          "T",
-          "B"
-        ],
-        "parts": [
-          "d : - : -.s, : s,;l,.t,;s, | m : -.m : r.s,;s, : f;m.r;t, ||",
-          "s, : - : -.s, : s,;l,.t,;s, | d : -.d : t,.s,;s, : d;d.l,;s, ||",
-          "m : - : -.s, : s,;l,.t,;s, | s : -.s : f.f;f : l,;s.f;r ||",
-          "d : - : -.s, : s,;l,.t,;s, | d : -.d : s,.s,;s, : s,;s,.s,;s, ||"
-        ],
-        "lyrics": "to :  : Mi- : ra;y;A;mi- | nao : Je-soa : fa;ni;ria : ko;di;a;ho ||"
-      },
-      {
-        "_label": "Fin",
-        "mark": "fin",
-        "voices": [
-          "S",
-          "A",
-          "T",
-          "B"
-        ],
-        "parts": [
-          "d : - : -.s, : s,;l,.t,;s, | m : -.m : r : - | d : - : - : - ||",
-          "s, : - : -.s, : s,;l,.t,;s, | d : -.d : t, : - | s, : - : - : - ||",
-          "m : - : -.s, : s,;l,.t,;s, | s : -.s : f : - | m : - : - : - ||",
-          "d : - : -.s, : s,;l,.t,;s, | d : -.d : s, : - | d : - : - : - ||"
-        ],
-        "lyrics": "to :  : Mi- : ra;y;A;mi- | nao : Je- : soa :  |  ||"
-      }
-    ],
-    "verses": [
-      "2- Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay\nFa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao\n\nFa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa\nAmbany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-"
-    ]
+    "albumCover": null
   },
-  "albumCover": null
-},
   {
     "id": 12,
     "title": "Mamangy Andriamanitra",
@@ -423,106 +431,90 @@
     "solfa": null,
     "albumCover": null
   },
-{
-  "id": 14,
-  "title": "Ny tena fitiavana",
-  "lyrics": "Ny fitiavanao ry Ray mpahary ô\nNomenao ny zanakao malalanao\nMba tsy hisy ho very izay mino Azy\nHanam-piadanana mandrakizay\n\nRef: Sarobidy sy manan-danja (sy manandanja)\nNy fitiavan'Andriamanitra (tsy mba ho sandaina)\nTsy sandaina amin'ny vola na ny harena\nFa tena fitiavana\n\nJesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino\n\nRy olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo",
-  "author": "Solonomenjanahary Annie",
-  "translator": null,
-  "album": "Album volume 2",
-  "updatedAt": 28,
-  "solfa": {
-    "ref": null,
-    "keyName": "Do dia A",
-    "tonic": "A",
-    "meter": "12/8",
-    "beatsPerBar": 4,
-    "bpm": 110,
-    "tempo": "♩. = 110",
-    "playback": { "instrument": "piano", "countIn": true, "singNames": true },
-    "origin": null,
-    "composer": "Annie S.",
-    "arranger": ["AFA (Betlehema Ankofafa)"],
-    "voices": ["S", "A", "T", "B"],
-    "_note": "Structure dynamique : chaque voix a sa propre longueur de mesure/de ligne ; les paroles sont des syllabes libres (non alignées sur la grille). '.' = silence. Les lignes _check signalent les passages à relire sur la photo.",
-    "systems": [
-      {
-        "_label": "Couplet (1-2-3)",
-        "parts": [
-          "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l, | s,;-;d : -;-;- : -;-;- : -;-;- | s,;d;m : -;r;d : t,;d;- : -;-;- ||",
-          "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f, | m,;-;s, : -;-;- : -;-;- : -;-;- | m,;s,;d : -;l,;s, : m;r;d : -;-;- ||",
-          "d;d;d : -;d;d : -;-;- : d;d;d | d;-;m : -;-;- : -;-;- : -;-;- | d;m;s : -;f;m : r;m;- : -;-;- ||",
-          "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d, | d,;-;d, : -;-;- : -;-;- : -;-;- | d,;d,;d, : -;d,;d, : d,;d,;- : -;-;- ||"
-        ],
-        "lyrics": "Ny- fi- tia- va- nao ry Ray Mpa- ha- ry- ô | Ho- me- nao ny Za- na- Ka- o",
-        "repeatLyrics": "2. Jesoa tia ô, Mpamonjy ianao, Fa nanaiky ho faty\n3. Ry olombelona ô, Tsarevy izao, Didy vaovao no"
+  {
+    "id": 14,
+    "title": "Ny tena fitiavana",
+    "lyrics": "Ny fitiavanao ry Ray mpahary ô\nNomenao ny zanakao malalanao\nMba tsy hisy ho very izay mino Azy\nHanam-piadanana mandrakizay\n\nRef: Sarobidy sy manan-danja (sy manandanja)\nNy fitiavan'Andriamanitra (tsy mba ho sandaina)\nTsy sandaina amin'ny vola na ny harena\nFa tena fitiavana\n\nJesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino\n\nRy olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo",
+    "author": "Solonomenjanahary Annie",
+    "translator": null,
+    "album": "Album volume 2",
+    "updatedAt": 27,
+    "solfa": {
+      "ref": null,
+      "keyName": "Do dia A",
+      "tonic": "A",
+      "meter": "12/8",
+      "beatsPerBar": 4,
+      "bpm": 110,
+      "tempo": "♩. = 110",
+      "playback": {
+        "instrument": "piano",
+        "countIn": true,
+        "singNames": true
       },
-      {
-        "_label": "Couplet (suite)",
-        "parts": [
-          "d;t,;l, : l,;-;s, : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | f;-;r : -;-;- : -;-;- : -;-;- ||",
-          "s,;s,;f, : f,;-;f, : -;-;- : -;-;- | r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
-          "m;r;d : d;-;t, : -;-;- : -;-;- | t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t, | t,;-;t, : -;-;- : -;-;- : -;-;- ||",
-          "d,;d,;d, : r,;-;r, : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||"
-        ],
-        "lyrics": "ma- la- la- nao | Mba tsy hi- sy ve- ry i- zay mi- no A- zy",
-        "repeatLyrics": "hisolovana · Saingy velona ho mandrakizay\nnomen'ny Tompo · Dia ny mba hifankatiavantsika",
-        "_check": "Mesure 1 = 4 temps (d t, l, | l, - s, | - | -) : l'ancienne version l'avait coupée en deux mesures. Syllabes de la mesure 2 à vérifier."
-      },
-      {
-        "_label": "Fiverenana (refrain) - début",
-        "mark": "segno",
-        "parts": [
-          "s,;l,;t, : -;l,;s, : -;f;m : -;r;d | t,;-;d : -;-;- : -;-;- : -;-;- | m;m;m : -;-;- : -;m;m : -;r;m ||",
-          "s,;s,;s, : -;s,;s, : -;r;d : -;t,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;f,;s, ||",
-          "t,;d;r : -;d;t, : -;l;s : -;f;m | r;-;m : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d;d : -;d;d ||",
-          "s,;s,;s, : -;s,;s, : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d,;d, : -;d,;d, ||"
-        ],
-        "lyrics": "Ha- nam- pia- na- na man- dra- ki- za- y | Sa- ro- bi- dy sy ma- nan-",
-        "repeatLyrics": "2. Mba ho santatra hoan'izay mino\n3. Satria mpianatra voafidy hanompo",
-        "_check": "Suppression du temps vide ajouté au début (c'était le signe de reprise ||:). Dernier groupe de la mesure 1 (- r d / - t, s, / - f m / - s, s,) à confirmer."
-      },
-      {
-        "_label": "Fiverenana (refrain) - suite",
-        "parts": [
-          "f;-;f : -;-;- : -;-;- : -;-;- | f;f;f : -;-;- : -;m;f : -;s;s | f;-;m : -;-;- : -;-;- : -;-;- ||",
-          "l,;-;l, : -;-;- : -;-;- : -;-;- | t,;t,;t, : -;-;- : -;l,;t, : -;t,;t, | d;-;d : -;-;- : -;-;- : -;-;- ||",
-          "r;-;r : -;-;- : -;-;- : -;-;- | r;r;r : -;-;- : -;d;r : -;r;r | l;-;s : -;-;- : -;-;- : -;-;- ||",
-          "r,;-;r, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;s, : -;-;- ||"
-        ],
-        "lyrics": "ma- nan- dan- ja (sy ma- nan- dan- ja) | Ny fi- tia- van'An- dri- a- ma- ni- tra | (Tsy"
-      },
-      {
-        "_label": "Fiverenana - (Tsy mba sandaina)...",
-        "parts": [
-          ".;.;. : .;s,;s, : m;r;d : -;d;d | -;d;- : d;t,;d : r;-;l, : -;-;- | -;-;- : -;d;d : t,;d;r : m;r;d ||",
-          ".;.;. : .;s,;s, : d;l,;s, : -;s,;s, | -;s,;- : s,;s,;s, : l,;-;f, : -;-;- | -;-;- : -;l,;s, : s,;s,;s, : d;s,;s, ||",
-          ".;.;. : .;s,;s, : s;f;m : -;m;m | -;m;- : m;r;m : f;-;f : -;-;- | -;-;- : -;f;f : f;m;f : s;f;m ||",
-          "d,;t,;d, : r,;m,;d, : d,;d,;d, : -;d,;- | d,;r,;m, : f,;-;f, : -;-;- : -;-;- | -;f,;f, : r,;m,;r, : s,;s,;s, ||"
-        ],
-        "lyrics": "mba san- dai- na) | San- dai- nam'ny vo- la na ny ha- re- na | Fa te- na fi- tia- va- na",
-        "_check": "CONFIANCE FAIBLE : photo peu lisible sur cette ligne. La basse (3 groupes dans la dernière mesure) et les voix A/T/B sont à revérifier sur un recadrage."
-      },
-      {
-        "_label": "Famaranana (D.S. @ Farany)",
-        "mark": "ds",
-        "parts": [
-          "-;-;- : -;-;- : -;s,;t : d;r;d | t,;-;d : -;-;- : -;-;- : -;-;- ||",
-          "-;-;- : -;-;- : -;m;s, : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
-          "-;-;- : -;-;- : -;d;r : m;f;m | r;-;m : -;-;- : -;-;- : -;-;- ||",
-          "-;-;- : -;-;- : -;l,;s, : s,;s,;s, | d,;-;d, : -;-;- : -;-;- : -;-;- ||"
-        ],
-        "lyrics": "(To- koa) ma- no- lo- tra ra- ny",
-        "_check": "Paroles de fin (« Tokoa… manolotra… rany ») illisibles : à confirmer."
-      }
-    ],
-    "verses": [
-      "2- Jesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino",
-      "3- Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
-    ]
+      "origin": null,
+      "composer": "Annie S.",
+      "arranger": null,
+      "voices": [
+        "S",
+        "A",
+        "T",
+        "B"
+      ],
+      "systems": [
+        {
+          "parts": [
+            "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l, | s,;-;d : -;-;- : -;-;- : -;-;- | s,;d;m : -;r;d : t,;d;- : -;-;- ||",
+            "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f, | m,;-;s, : -;-;- : -;-;- : -;-;- | m,;s,;d : -;l,;s, : m;r;d : -;-;- ||",
+            "d;d;d : -;d;d : -;-;- : d;d;d | d;-;m : -;-;- : -;-;- : -;-;- | d;m;s : -;f;m : r;m;- : -;-;- ||",
+            "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d, | d,;-;d, : -;-;- : -;-;- : -;-;- | d,;d,;d, : -;d,;d, : d,;d,;- : -;-;- ||"
+          ],
+          "lyrics": ""
+        },
+        {
+          "parts": [
+            "d;t,;l, : -;-;- : -;-;- : -;-;- | l,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | f;-;r : -;-;- : -;-;- : -;-;- ||",
+            "s,;s,;f, : -;-;- : -;-;- : -;-;- | f,;-;f, : -;-;- : -;-;- : -;-;- | r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
+            "m;r;d : -;-;- : -;-;- : -;-;- | d;-;t, : -;-;- : -;-;- : -;-;- | t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t, | t,;-;t, : -;-;- : -;-;- : -;-;- ||",
+            "d,;d,;d, : -;-;- : -;-;- : -;-;- | r,;-;r, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||"
+          ],
+          "lyrics": ""
+        },
+        {
+          "parts": [
+            "-;-;- : s,;l,;t, : -;l,;s, : -;f;m | t,;-;d : -;-;- : -;-;- : -;-;- | m;m;m : -;-;- : -;m;m : -;-;- ||",
+            "-;-;- : s,;s,;s, : -;s,;s, : -;r;d | s,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;-;- ||",
+            "-;-;- : t,;d;r : -;d;t, : -;l;s | r;-;m : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d;d : -;-;- ||",
+            "-;-;- : s,;s,;s, : -;s,;s, : -;s,;s, | d,;-;d, : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d,;d, : -;-;- ||"
+          ],
+          "lyrics": ""
+        },
+        {
+          "parts": [
+            "-;r;m : f;-;f : -;-;- : -;-;- | f;f;f : -;-;- : -;m;f : -;s;s | f;-;m : -;-;- : -;-;- : -;-;- ||",
+            "-;f,;s, : l,;-;l, : -;l,;r : -;d;t, | t,;t,;t, : -;-;- : -;l,;t, : -;t,;t, | d;-;d : -;-;- : -;-;- : -;-;- ||",
+            "-;d;d : r;-;r : -;-;- : -;-;- | r;r;r : -;-;- : -;d;r : -;r;r | l;-;s : -;-;- : -;-;- : -;-;- ||",
+            "-;d,;d, : r,;-;r, : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;s, : -;-;- ||"
+          ],
+          "lyrics": ""
+        },
+        {
+          "parts": [
+            "-;-;- : -;s,;t : m;r;d : -;d;d | d;r;d : t,;-;d : -;-;- : -;-;- ||",
+            "-;-;- : -;-;- : d;s,;s, : -;m;s, | s,;s,;s, : s,;-;s, : -;-;- : -;-;- ||",
+            "-;-;- : -;-;- : s;f;m : -;d;r | m;f;m : r;-;m : -;-;- : -;-;- ||",
+            "d;t,;d : r;m;d : s,;s,;s, : -;l,;s, | s,;s,;s, : d,;-;d, : -;-;- : -;-;- ||"
+          ],
+          "lyrics": ""
+        }
+      ],
+      "verses": [
+        "2- Jesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino",
+        "3- Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
+      ]
+    },
+    "albumCover": null
   },
-  "albumCover": null
-},
   {
     "id": 15,
     "title": "Ra Jesoa ihany",
@@ -536,69 +528,561 @@
   },
   {
     "id": 16,
-    "title": "Tombambidiko",
+    "title": "Tombam-bidiko",
     "lyrics": "Notiavin'Andriamanitra fatratra aho\nNomeny ahy ny zanany lahitokana\nNaha foy ny ainy hamonjy ahy sakaizany\nFitiavan-dehibe tsy misy toy izany\n\nRef: Satria Malala eo imasonao aho Ray ô\nBe voninahitra aho sady tianao\nTsy azo sandaina volamena vatosoa\nFa ny rà-nao Jesoa no tombam-bidiko !\n\nNanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko\nFananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay",
     "author": "Rajaonary Jean Robert",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 22,
+    "updatedAt": 33,
     "solfa": {
-  "ref": null,
-  "keyName": "Do dia C",
-  "tonic": "C",
-  "meter": "4/4",
-  "beatsPerBar": 4,
-  "bpm": 80,
-  "tempo": "♩ = 80",
-  "playback": { "instrument": "piano", "countIn": true, "singNames": true },
-  "origin": null,
-  "composer": "Jean Robert",
-  "arranger": ["AFA (Antsan'ny Famonjena)"],
-  "voices": ["S", "A", "T", "B"],
-  "systems": [
-    {
-      "parts": [
-        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.d' : l;-;-;s : f.m | r : - ||",
-        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : f;-;-;m : m.r | t, : - ||",
-        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.t, | s, : - ||",
-        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.s, | s,, : - ||"
+      "ref": null,
+      "keyName": "Do dia C",
+      "tonic": "C",
+      "meter": "4/4",
+      "beatsPerBar": 4,
+      "bpm": 80,
+      "tempo": "♩ = 80",
+      "playback": {
+        "instrument": "piano",
+        "countIn": true,
+        "singNames": true
+      },
+      "origin": null,
+      "composer": "Jean Robert",
+      "arranger": [
+        "AFA (Antsan'ny Famonjena)"
       ],
-      "lyrics": "1. No-tia-vi- | n'An-dria-ma-ni-tra fa-tra-tra- | ho |  No-me-ny a-hy | ny za-na-bi-la-hi-to-ka-na",
-      "repeatLyrics": "Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko"
+      "voices": [
+        "S",
+        "A",
+        "T",
+        "B"
+      ],
+      "systems": [
+        {
+          "parts": [
+            "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.d' : l;-;-;s : f.m | r : - ||",
+            "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : f;-;-;m : m.r | t, : - ||",
+            "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.t, | s, : - ||",
+            "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.s, | s,, : - ||"
+          ],
+          "lyrics": "1. No-tia-vi- | n'An-dria-ma-ni-tra fa-tra-tra- | ho |  No-me-ny a-hy | ny za-na-bi-la-hi-to-ka-na",
+          "repeatLyrics": "Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "d : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "s;-;-;s : s.d' : l;-;-;s : f.l",
+                  "beats": null
+                },
+                {
+                  "notation": "s : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "s;-;-;s : s.d' : l;-;-;s : f.m",
+                  "beats": null
+                },
+                {
+                  "notation": "r : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s, : d.r",
+                  "beats": null
+                },
+                {
+                  "notation": "m;-;-;m : m.d : f;-;-;m : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "m : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d.r",
+                  "beats": null
+                },
+                {
+                  "notation": "m;-;-;m : m.d : f;-;-;m : m.r",
+                  "beats": null
+                },
+                {
+                  "notation": "t, : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "m, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d;-;-;d : d.s, : d;-;-;d : d.d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : -",
+                  "beats": null
+                },
+                {
+                  "notation": "m, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d;-;-;d : d.s, : d;-;-;d : d.t,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d, : d,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : d,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,;-;-;d, : d,.d, : f,;-;-;f, : f,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s,, : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "1. No-tia-vi-",
+            "n'An-dria-ma-ni-tra fa-tra-tra-",
+            "ho",
+            "No-me-ny a-hy",
+            "ny za-na-bi-la-hi-to-ka-na"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "parts": [
+            "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.m : f;-;-;f : f.r | d : - : - : - ||",
+            "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : r;-;-;r : r.s, | s, : - : - : - ||",
+            "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.m, : t,;-;-;t, : t,.t, | m, : - : - : - ||",
+            "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : s,;-;-;s, : s,.s, | d, : - : - : - ||"
+          ],
+          "lyrics": "Na-foy ny ai-ny ha-monjy a-hy sa-kai-za-ny |  Fi-tia-van-de-hi-be tsy mi-sy toy i-za-ny !",
+          "repeatLyrics": "Fananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "d : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "s;-;-;s : s.d' : l;-;-;s : f.l",
+                  "beats": null
+                },
+                {
+                  "notation": "s : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "s;-;-;s : s.m : f;-;-;f : f.r",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s, : d.r",
+                  "beats": null
+                },
+                {
+                  "notation": "m;-;-;m : m.d : f;-;-;m : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "m : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d.r",
+                  "beats": null
+                },
+                {
+                  "notation": "m;-;-;m : m.d : r;-;-;r : r.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "m, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d;-;-;d : d.s, : d;-;-;d : d.d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : -",
+                  "beats": null
+                },
+                {
+                  "notation": "m, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d;-;-;d : d.m, : t,;-;-;t, : t,.t,",
+                  "beats": null
+                },
+                {
+                  "notation": "m, : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d, : d,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : d,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,;-;-;d, : d,.d, : s,;-;-;s, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Na-foy ny ai-ny ha-monjy a-hy sa-kai-za-ny",
+            "Fi-tia-van-de-hi-be tsy mi-sy toy i-za-ny !"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "parts": [
+            "s : t.d' | r';-;-;r' : r'.t : d';-;-;t : d'.t | s : - : t.d' | r';-;-;r' : r'.s : r';-;-;t : d'.s | d' : - ||",
+            "m : r.m | f;-;-;f : f.s : l;-;-;s : l.s | m : - : r.m | f;-;-;f : f.m : f;-;-;f : f.m | m : - ||",
+            "d : t,.d | r;-;-;r : r.d : d;-;-;d : d.d | d : - : t,.d | r;-;-;r : r.d : r;-;-;r : r.d | d : - ||",
+            "d, : s,.d, | s,;-;-;s, : s,.s, : l,;-;-;l, : f,.f, | d, : - : s,.d, | s,;-;-;s, : s,.s, : s,;-;-;s, : s,.s, | d, : - ||"
+          ],
+          "lyrics": "Fiverenana : Sa-tria ma-la-la eo i-ma-so-nao a-ho Ray ô | Be vo-ni-na-hi-tra ho sa-dy ti-a-nao",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "s : t.d'",
+                  "beats": null
+                },
+                {
+                  "notation": "r';-;-;r' : r'.t : d';-;-;t : d'.t",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : t.d'",
+                  "beats": null
+                },
+                {
+                  "notation": "r';-;-;r' : r'.s : r';-;-;t : d'.s",
+                  "beats": null
+                },
+                {
+                  "notation": "d' : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "m : r.m",
+                  "beats": null
+                },
+                {
+                  "notation": "f;-;-;f : f.s : l;-;-;s : l.s",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : r.m",
+                  "beats": null
+                },
+                {
+                  "notation": "f;-;-;f : f.m : f;-;-;f : f.m",
+                  "beats": null
+                },
+                {
+                  "notation": "m : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "d : t,.d",
+                  "beats": null
+                },
+                {
+                  "notation": "r;-;-;r : r.d : d;-;-;d : d.d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : t,.d",
+                  "beats": null
+                },
+                {
+                  "notation": "r;-;-;r : r.d : r;-;-;r : r.d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d, : s,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "s,;-;-;s, : s,.s, : l,;-;-;l, : f,.f,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : s,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "s,;-;-;s, : s,.s, : s,;-;-;s, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Fiverenana : Sa-tria ma-la-la eo i-ma-so-nao a-ho Ray ô",
+            "Be vo-ni-na-hi-tra ho sa-dy ti-a-nao"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "parts": [
+            "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - : - : t.d' | r';-;-;r' : r'.t : l;-;-;s : f.m | d' : - : - : - ||",
+            "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - : - : r.m | f;-;-;f : f.s : f;-;-;m : r.d | s : - : - : - ||",
+            "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - : - : t,.d | r;-;-;r : r.d : d;-;-;d : t,.s, | m : - : - : - ||",
+            "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - : - : s,.d, | s,;-;-;s, : s,.s, : f,;-;-;f, : s,.s,, | d, : - : - : - ||"
+          ],
+          "lyrics": "Tsy a-zo san-dai-na vo-la-me-na va-to-soa (Ny te-na-ko) | Fa-ny ra-nao Je-soy no tom-bam-bi-di-ko !",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "d : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "s;-;-;s : s.d' : l;-;-;s : f.l",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : - : t.d'",
+                  "beats": null
+                },
+                {
+                  "notation": "r';-;-;r' : r'.t : l;-;-;s : f.m",
+                  "beats": null
+                },
+                {
+                  "notation": "d' : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s, : d.r",
+                  "beats": null
+                },
+                {
+                  "notation": "m;-;-;m : m.d : f;-;-;m : m.f",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : - : r.m",
+                  "beats": null
+                },
+                {
+                  "notation": "f;-;-;f : f.s : f;-;-;m : r.d",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "m, : s,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d;-;-;d : d.s, : d;-;-;d : d.d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : - : t,.d",
+                  "beats": null
+                },
+                {
+                  "notation": "r;-;-;r : r.d : d;-;-;d : t,.s,",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d, : d,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : - : s,.d,",
+                  "beats": null
+                },
+                {
+                  "notation": "s,;-;-;s, : s,.s, : f,;-;-;f, : s,.s,,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Tsy a-zo san-dai-na vo-la-me-na va-to-soa (Ny te-na-ko)",
+            "Fa-ny ra-nao Je-soy no tom-bam-bi-di-ko !"
+          ],
+          "lyricsAlignment": "free"
+        }
+      ],
+      "verses": [
+        "2. Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko\nFananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay"
+      ],
+      "layoutVersion": 2,
+      "alignment": "independent"
     },
-    {
-      "parts": [
-        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - | d : m.f | s;-;-;s : s.m : f;-;-;f : f.r | d : - : - : - ||",
-        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - | s, : d.r | m;-;-;m : m.d : r;-;-;r : r.s, | s, : - : - : - ||",
-        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - | m, : s,.s, | d;-;-;d : d.m, : t,;-;-;t, : t,.t, | m, : - : - : - ||",
-        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - | d, : d,.d, | d,;-;-;d, : d,.d, : s,;-;-;s, : s,.s, | d, : - : - : - ||"
-      ],
-      "lyrics": "Na-foy ny ai-ny ha-monjy a-hy sa-kai-za-ny |  Fi-tia-van-de-hi-be tsy mi-sy toy i-za-ny !",
-      "repeatLyrics": "Fananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay"
-    },
-    {
-      "parts": [
-        "s : t.d' | r';-;-;r' : r'.t : d';-;-;t : d'.t | s : - : t.d' | r';-;-;r' : r'.s : r';-;-;t : d'.s | d' : - ||",
-        "m : r.m | f;-;-;f : f.s : l;-;-;s : l.s | m : - : r.m | f;-;-;f : f.m : f;-;-;f : f.m | m : - ||",
-        "d : t,.d | r;-;-;r : r.d : d;-;-;d : d.d | d : - : t,.d | r;-;-;r : r.d : r;-;-;r : r.d | d : - ||",
-        "d, : s,.d, | s,;-;-;s, : s,.s, : l,;-;-;l, : f,.f, | d, : - : s,.d, | s,;-;-;s, : s,.s, : s,;-;-;s, : s,.s, | d, : - ||"
-      ],
-      "lyrics": "Fiverenana : Sa-tria ma-la-la eo i-ma-so-nao a-ho Ray ô | Be vo-ni-na-hi-tra ho sa-dy ti-a-nao"
-    },
-    {
-      "parts": [
-        "d : m.f | s;-;-;s : s.d' : l;-;-;s : f.l | s : - : - : t.d' | r';-;-;r' : r'.t : l;-;-;s : f.m | d' : - : - : - ||",
-        "s, : d.r | m;-;-;m : m.d : f;-;-;m : m.f | m : - : - : r.m | f;-;-;f : f.s : f;-;-;m : r.d | s : - : - : - ||",
-        "m, : s,.s, | d;-;-;d : d.s, : d;-;-;d : d.d | d : - : - : t,.d | r;-;-;r : r.d : d;-;-;d : t,.s, | m : - : - : - ||",
-        "d, : d,.d, | d,;-;-;d, : d,.d, : f,;-;-;f, : f,.f, | d, : - : - : s,.d, | s,;-;-;s, : s,.s, : f,;-;-;f, : s,.s,, | d, : - : - : - ||"
-      ],
-      "lyrics": "Tsy a-zo san-dai-na vo-la-me-na va-to-soa (Ny te-na-ko) | Fa-ny ra-nao Je-soy no tom-bam-bi-di-ko !"
-    }
-  ],
-  "verses": [
-    "2. Nanaiky ho faty Ianao Jesoa nisolo ahy\nVelon'Ianao ka niditra ato anatiko\nFananteanana sy finoan'ianako\nFitiavana tsy levona mandrakizay"
-  ]
-},
     "albumCover": null
   }
 ]
