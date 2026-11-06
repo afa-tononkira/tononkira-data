@@ -423,90 +423,106 @@
     "solfa": null,
     "albumCover": null
   },
-  {
-    "id": 14,
-    "title": "Ny tena fitiavana",
-    "lyrics": "Ny fitiavanao ry Ray mpahary ô\nNomenao ny zanakao malalanao\nMba tsy hisy ho very izay mino Azy\nHanam-piadanana mandrakizay\n\nRef: Sarobidy sy manan-danja (sy manandanja)\nNy fitiavan'Andriamanitra (tsy mba ho sandaina)\nTsy sandaina amin'ny vola na ny harena\nFa tena fitiavana\n\nJesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino\n\nRy olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo",
-    "author": "Solonomenjanahary Annie",
-    "translator": null,
-    "album": "Album volume 2",
-    "updatedAt": 27,
-    "solfa": {
-      "ref": null,
-      "keyName": "Do dia A",
-      "tonic": "A",
-      "meter": "12/8",
-      "beatsPerBar": 4,
-      "bpm": 110,
-      "tempo": "♩. = 110",
-      "playback": {
-        "instrument": "piano",
-        "countIn": true,
-        "singNames": true
+{
+  "id": 14,
+  "title": "Ny tena fitiavana",
+  "lyrics": "Ny fitiavanao ry Ray mpahary ô\nNomenao ny zanakao malalanao\nMba tsy hisy ho very izay mino Azy\nHanam-piadanana mandrakizay\n\nRef: Sarobidy sy manan-danja (sy manandanja)\nNy fitiavan'Andriamanitra (tsy mba ho sandaina)\nTsy sandaina amin'ny vola na ny harena\nFa tena fitiavana\n\nJesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino\n\nRy olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo",
+  "author": "Solonomenjanahary Annie",
+  "translator": null,
+  "album": "Album volume 2",
+  "updatedAt": 28,
+  "solfa": {
+    "ref": null,
+    "keyName": "Do dia A",
+    "tonic": "A",
+    "meter": "12/8",
+    "beatsPerBar": 4,
+    "bpm": 110,
+    "tempo": "♩. = 110",
+    "playback": { "instrument": "piano", "countIn": true, "singNames": true },
+    "origin": null,
+    "composer": "Annie S.",
+    "arranger": ["AFA (Betlehema Ankofafa)"],
+    "voices": ["S", "A", "T", "B"],
+    "_note": "Structure dynamique : chaque voix a sa propre longueur de mesure/de ligne ; les paroles sont des syllabes libres (non alignées sur la grille). '.' = silence. Les lignes _check signalent les passages à relire sur la photo.",
+    "systems": [
+      {
+        "_label": "Couplet (1-2-3)",
+        "parts": [
+          "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l, | s,;-;d : -;-;- : -;-;- : -;-;- | s,;d;m : -;r;d : t,;d;- : -;-;- ||",
+          "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f, | m,;-;s, : -;-;- : -;-;- : -;-;- | m,;s,;d : -;l,;s, : m;r;d : -;-;- ||",
+          "d;d;d : -;d;d : -;-;- : d;d;d | d;-;m : -;-;- : -;-;- : -;-;- | d;m;s : -;f;m : r;m;- : -;-;- ||",
+          "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d, | d,;-;d, : -;-;- : -;-;- : -;-;- | d,;d,;d, : -;d,;d, : d,;d,;- : -;-;- ||"
+        ],
+        "lyrics": "Ny- fi- tia- va- nao ry Ray Mpa- ha- ry- ô | Ho- me- nao ny Za- na- Ka- o",
+        "repeatLyrics": "2. Jesoa tia ô, Mpamonjy ianao, Fa nanaiky ho faty\n3. Ry olombelona ô, Tsarevy izao, Didy vaovao no"
       },
-      "origin": null,
-      "composer": "Annie S.",
-      "arranger": null,
-      "voices": [
-        "S",
-        "A",
-        "T",
-        "B"
-      ],
-      "systems": [
-        {
-          "parts": [
-            "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l, | s,;-;d : -;-;- : -;-;- : -;-;- | s,;d;m : -;r;d : t,;d;- : -;-;- ||",
-            "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f, | m,;-;s, : -;-;- : -;-;- : -;-;- | m,;s,;d : -;l,;s, : m;r;d : -;-;- ||",
-            "d;d;d : -;d;d : -;-;- : d;d;d | d;-;m : -;-;- : -;-;- : -;-;- | d;m;s : -;f;m : r;m;- : -;-;- ||",
-            "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d, | d,;-;d, : -;-;- : -;-;- : -;-;- | d,;d,;d, : -;d,;d, : d,;d,;- : -;-;- ||"
-          ],
-          "lyrics": ""
-        },
-        {
-          "parts": [
-            "d;t,;l, : -;-;- : -;-;- : -;-;- | l,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | f;-;r : -;-;- : -;-;- : -;-;- ||",
-            "s,;s,;f, : -;-;- : -;-;- : -;-;- | f,;-;f, : -;-;- : -;-;- : -;-;- | r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
-            "m;r;d : -;-;- : -;-;- : -;-;- | d;-;t, : -;-;- : -;-;- : -;-;- | t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t, | t,;-;t, : -;-;- : -;-;- : -;-;- ||",
-            "d,;d,;d, : -;-;- : -;-;- : -;-;- | r,;-;r, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||"
-          ],
-          "lyrics": ""
-        },
-        {
-          "parts": [
-            "-;-;- : s,;l,;t, : -;l,;s, : -;f;m | t,;-;d : -;-;- : -;-;- : -;-;- | m;m;m : -;-;- : -;m;m : -;-;- ||",
-            "-;-;- : s,;s,;s, : -;s,;s, : -;r;d | s,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;-;- ||",
-            "-;-;- : t,;d;r : -;d;t, : -;l;s | r;-;m : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d;d : -;-;- ||",
-            "-;-;- : s,;s,;s, : -;s,;s, : -;s,;s, | d,;-;d, : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d,;d, : -;-;- ||"
-          ],
-          "lyrics": ""
-        },
-        {
-          "parts": [
-            "-;r;m : f;-;f : -;-;- : -;-;- | f;f;f : -;-;- : -;m;f : -;s;s | f;-;m : -;-;- : -;-;- : -;-;- ||",
-            "-;f,;s, : l,;-;l, : -;l,;r : -;d;t, | t,;t,;t, : -;-;- : -;l,;t, : -;t,;t, | d;-;d : -;-;- : -;-;- : -;-;- ||",
-            "-;d;d : r;-;r : -;-;- : -;-;- | r;r;r : -;-;- : -;d;r : -;r;r | l;-;s : -;-;- : -;-;- : -;-;- ||",
-            "-;d,;d, : r,;-;r, : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;s, : -;-;- ||"
-          ],
-          "lyrics": ""
-        },
-        {
-          "parts": [
-            "-;-;- : -;s,;t : m;r;d : -;d;d | d;r;d : t,;-;d : -;-;- : -;-;- ||",
-            "-;-;- : -;-;- : d;s,;s, : -;m;s, | s,;s,;s, : s,;-;s, : -;-;- : -;-;- ||",
-            "-;-;- : -;-;- : s;f;m : -;d;r | m;f;m : r;-;m : -;-;- : -;-;- ||",
-            "d;t,;d : r;m;d : s,;s,;s, : -;l,;s, | s,;s,;s, : d,;-;d, : -;-;- : -;-;- ||"
-          ],
-          "lyrics": ""
-        }
-      ],
-"verses": [
-  "2- Jesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino",
-  "3- Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
-]
-    },
-    "albumCover": null
+      {
+        "_label": "Couplet (suite)",
+        "parts": [
+          "d;t,;l, : l,;-;s, : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | f;-;r : -;-;- : -;-;- : -;-;- ||",
+          "s,;s,;f, : f,;-;f, : -;-;- : -;-;- | r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
+          "m;r;d : d;-;t, : -;-;- : -;-;- | t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t, | t,;-;t, : -;-;- : -;-;- : -;-;- ||",
+          "d,;d,;d, : r,;-;r, : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||"
+        ],
+        "lyrics": "ma- la- la- nao | Mba tsy hi- sy ve- ry i- zay mi- no A- zy",
+        "repeatLyrics": "hisolovana · Saingy velona ho mandrakizay\nnomen'ny Tompo · Dia ny mba hifankatiavantsika",
+        "_check": "Mesure 1 = 4 temps (d t, l, | l, - s, | - | -) : l'ancienne version l'avait coupée en deux mesures. Syllabes de la mesure 2 à vérifier."
+      },
+      {
+        "_label": "Fiverenana (refrain) - début",
+        "mark": "segno",
+        "parts": [
+          "s,;l,;t, : -;l,;s, : -;f;m : -;r;d | t,;-;d : -;-;- : -;-;- : -;-;- | m;m;m : -;-;- : -;m;m : -;r;m ||",
+          "s,;s,;s, : -;s,;s, : -;r;d : -;t,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;f,;s, ||",
+          "t,;d;r : -;d;t, : -;l;s : -;f;m | r;-;m : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d;d : -;d;d ||",
+          "s,;s,;s, : -;s,;s, : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d,;d, : -;d,;d, ||"
+        ],
+        "lyrics": "Ha- nam- pia- na- na man- dra- ki- za- y | Sa- ro- bi- dy sy ma- nan-",
+        "repeatLyrics": "2. Mba ho santatra hoan'izay mino\n3. Satria mpianatra voafidy hanompo",
+        "_check": "Suppression du temps vide ajouté au début (c'était le signe de reprise ||:). Dernier groupe de la mesure 1 (- r d / - t, s, / - f m / - s, s,) à confirmer."
+      },
+      {
+        "_label": "Fiverenana (refrain) - suite",
+        "parts": [
+          "f;-;f : -;-;- : -;-;- : -;-;- | f;f;f : -;-;- : -;m;f : -;s;s | f;-;m : -;-;- : -;-;- : -;-;- ||",
+          "l,;-;l, : -;-;- : -;-;- : -;-;- | t,;t,;t, : -;-;- : -;l,;t, : -;t,;t, | d;-;d : -;-;- : -;-;- : -;-;- ||",
+          "r;-;r : -;-;- : -;-;- : -;-;- | r;r;r : -;-;- : -;d;r : -;r;r | l;-;s : -;-;- : -;-;- : -;-;- ||",
+          "r,;-;r, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;s, : -;-;- ||"
+        ],
+        "lyrics": "ma- nan- dan- ja (sy ma- nan- dan- ja) | Ny fi- tia- van'An- dri- a- ma- ni- tra | (Tsy"
+      },
+      {
+        "_label": "Fiverenana - (Tsy mba sandaina)...",
+        "parts": [
+          ".;.;. : .;s,;s, : m;r;d : -;d;d | -;d;- : d;t,;d : r;-;l, : -;-;- | -;-;- : -;d;d : t,;d;r : m;r;d ||",
+          ".;.;. : .;s,;s, : d;l,;s, : -;s,;s, | -;s,;- : s,;s,;s, : l,;-;f, : -;-;- | -;-;- : -;l,;s, : s,;s,;s, : d;s,;s, ||",
+          ".;.;. : .;s,;s, : s;f;m : -;m;m | -;m;- : m;r;m : f;-;f : -;-;- | -;-;- : -;f;f : f;m;f : s;f;m ||",
+          "d,;t,;d, : r,;m,;d, : d,;d,;d, : -;d,;- | d,;r,;m, : f,;-;f, : -;-;- : -;-;- | -;f,;f, : r,;m,;r, : s,;s,;s, ||"
+        ],
+        "lyrics": "mba san- dai- na) | San- dai- nam'ny vo- la na ny ha- re- na | Fa te- na fi- tia- va- na",
+        "_check": "CONFIANCE FAIBLE : photo peu lisible sur cette ligne. La basse (3 groupes dans la dernière mesure) et les voix A/T/B sont à revérifier sur un recadrage."
+      },
+      {
+        "_label": "Famaranana (D.S. @ Farany)",
+        "mark": "ds",
+        "parts": [
+          "-;-;- : -;-;- : -;s,;t : d;r;d | t,;-;d : -;-;- : -;-;- : -;-;- ||",
+          "-;-;- : -;-;- : -;m;s, : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
+          "-;-;- : -;-;- : -;d;r : m;f;m | r;-;m : -;-;- : -;-;- : -;-;- ||",
+          "-;-;- : -;-;- : -;l,;s, : s,;s,;s, | d,;-;d, : -;-;- : -;-;- : -;-;- ||"
+        ],
+        "lyrics": "(To- koa) ma- no- lo- tra ra- ny",
+        "_check": "Paroles de fin (« Tokoa… manolotra… rany ») illisibles : à confirmer."
+      }
+    ],
+    "verses": [
+      "2- Jesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino",
+      "3- Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
+    ]
   },
+  "albumCover": null
+},
   {
     "id": 15,
     "title": "Ra Jesoa ihany",
