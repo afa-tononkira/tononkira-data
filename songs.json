@@ -64,9 +64,12 @@
         "origin": "Liste de lignes affichées à GAUCHE de l'en-tête de la partition (ex. origine du chant). null = rien.",
         "composer": "Texte affiché AU CENTRE de l'en-tête (ex. \"P.M.\").",
         "arranger": "Liste de lignes affichées à DROITE de l'en-tête.",
-        "voices": "Noms des voix, dans le MÊME ORDRE que « parts » : [\"S\",\"A\",\"T\",\"B\"] (soprano, alto, ténor, basse).",
-        "systems": "Liste de systèmes indépendants. Chaque système peut contenir tracks (format dynamique) et/ou parts (ancien format conservé pour compatibilité).",
-        "verses": "Couplets suivants affichés sous la partition, ex. [\"2. ...\", \"3. ...\"]."
+        "voices": "Noms/identifiants des voix, ex. [\"S\",\"A\",\"T\",\"B\"].",
+        "systems": "Liste de systèmes. Nouveau format: tracks[] contient une entrée par voix, chaque track possède son propre measures[] indépendant. Ancien format: parts[] peut être conservé pour compatibilité. Aucune égalité de longueur n'est exigée.",
+        "verses": "Couplets suivants affichés sous la partition, ex. [\"2. ...\", \"3. ...\"].",
+        "lyricSegments": "Segments de paroles libres, indépendants des mesures et des voix.",
+        "lyricsAlignment": "\"free\" indique que les paroles ne suivent pas une grille musicale commune.",
+        "tracks": "Format dynamique: [{ \"voice\":\"S\", \"measures\":[{\"notation\":\"...\", \"beats\":null, \"barline\":\"||\"}] }]. Chaque voix est indépendante."
       },
       "6_notation_solfa": {
         "exemple": "d : - : d | m : - : f ||",
@@ -76,7 +79,9 @@
         "subdivisions": "a.b = deux demi-temps ; a;b;c = parts égales ; '-' = tenue/silence selon le contexte de la notation.",
         "dynamique": "Dans le format tracks, chaque voix possède sa propre liste measures. Les voix peuvent avoir des nombres de mesures et des durées différents.",
         "paroles": "lyrics et lyricSegments sont indépendants des voix. Aucun alignement mesure par mesure ni nombre égal de syllabes/temps n'est exigé.",
-        "compatibilite": "parts et lyrics restent présents pour les anciennes versions. Les nouvelles versions doivent privilégier tracks et lyricSegments."
+        "compatibilite": "parts et lyrics restent présents pour les anciennes versions. Les nouvelles versions doivent privilégier tracks et lyricSegments.",
+        "regle_importante": "Format dynamique tracks: chaque voix a sa propre séquence de mesures et sa propre durée. Les paroles dans lyricSegments sont indépendantes. Ne jamais imposer le même nombre de temps, de mesures ou de syllabes aux quatre voix.",
+        "verification": "Vérifier les notes de chaque track séparément. Ne pas rejeter une chanson parce que les voix ou les paroles ont des longueurs différentes."
       },
       "7_publier": [
         "1) Modifier songs.json (et son double assets/songs_initial.json, ou laisser les outils le faire).",
@@ -438,7 +443,7 @@
     "author": "Solonomenjanahary Annie",
     "translator": null,
     "album": "Album volume 2",
-    "updatedAt": 27,
+    "updatedAt": 28,
     "solfa": {
       "ref": null,
       "keyName": "Do dia A",
@@ -463,55 +468,407 @@
       ],
       "systems": [
         {
-          "parts": [
-            "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l, | s,;-;d : -;-;- : -;-;- : -;-;- | s,;d;m : -;r;d : t,;d;- : -;-;- ||",
-            "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f, | m,;-;s, : -;-;- : -;-;- : -;-;- | m,;s,;d : -;l,;s, : m;r;d : -;-;- ||",
-            "d;d;d : -;d;d : -;-;- : d;d;d | d;-;m : -;-;- : -;-;- : -;-;- | d;m;s : -;f;m : r;m;- : -;-;- ||",
-            "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d, | d,;-;d, : -;-;- : -;-;- : -;-;- | d,;d,;d, : -;d,;d, : d,;d,;- : -;-;- ||"
+          "section": "Système 1",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "s,;s,;s, : -;l,;s, : -;-;- : s,;s,;l,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;-;d : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;d;m : -;r;d : t,;d;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "m,;m,;m, : -;f,;m, : -;-;- : m,;m,;f,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "m,;-;s, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "m,;s,;d : -;l,;s, : m;r;d : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "d;d;d : -;d;d : -;-;- : d;d;d",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;-;m : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;m;s : -;f;m : r;m;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d,;d,;d, : -;d,;d, : -;-;- : d,;d,;d,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d,;-;d, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d,;d,;d, : -;d,;d, : d,;d,;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            }
           ],
-          "lyrics": ""
+          "lyricSegments": [],
+          "lyricsAlignment": "free"
         },
         {
-          "parts": [
-            "d;t,;l, : -;-;- : -;-;- : -;-;- | l,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | f;-;r : -;-;- : -;-;- : -;-;- ||",
-            "s,;s,;f, : -;-;- : -;-;- : -;-;- | f,;-;f, : -;-;- : -;-;- : -;-;- | r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r, | s,;-;s, : -;-;- : -;-;- : -;-;- ||",
-            "m;r;d : -;-;- : -;-;- : -;-;- | d;-;t, : -;-;- : -;-;- : -;-;- | t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t, | t,;-;t, : -;-;- : -;-;- : -;-;- ||",
-            "d,;d,;d, : -;-;- : -;-;- : -;-;- | r,;-;r, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s, | s,;-;s, : -;-;- : -;-;- : -;-;- ||"
+          "section": "Système 2",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "d;t,;l, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "l,;-;s, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "f;-;r : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s,;s,;f, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "f,;-;f, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "r,;r,;r, : -;r,;r, : -;r,;- : r,;r,;r,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;-;s, : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "m;r;d : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;-;t, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "t,;t,;t, : -;t,;t, : -;t,;- : t,;t,;t,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "t,;-;t, : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d,;d,;d, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "r,;-;r, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : -;s,;s, : -;s,;- : s,;s,;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;-;s, : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            }
           ],
-          "lyrics": ""
+          "lyricSegments": [],
+          "lyricsAlignment": "free"
         },
         {
-          "parts": [
-            "-;-;- : s,;l,;t, : -;l,;s, : -;f;m | t,;-;d : -;-;- : -;-;- : -;-;- | m;m;m : -;-;- : -;m;m : -;-;- ||",
-            "-;-;- : s,;s,;s, : -;s,;s, : -;r;d | s,;-;s, : -;-;- : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;-;- ||",
-            "-;-;- : t,;d;r : -;d;t, : -;l;s | r;-;m : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d;d : -;-;- ||",
-            "-;-;- : s,;s,;s, : -;s,;s, : -;s,;s, | d,;-;d, : -;-;- : -;-;- : -;-;- | d;d;d : -;-;- : -;d,;d, : -;-;- ||"
+          "section": "Fiverenana",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "-;-;- : s,;l,;t, : -;l,;s, : -;f;m",
+                  "barline": "|"
+                },
+                {
+                  "notation": "t,;-;d : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "m;m;m : -;-;- : -;m;m : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "-;-;- : s,;s,;s, : -;s,;s, : -;r;d",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;-;s, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : -;-;- : -;s,;s, : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "-;-;- : t,;d;r : -;d;t, : -;l;s",
+                  "barline": "|"
+                },
+                {
+                  "notation": "r;-;m : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;d;d : -;-;- : -;d;d : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "-;-;- : s,;s,;s, : -;s,;s, : -;s,;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d,;-;d, : -;-;- : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;d;d : -;-;- : -;d,;d, : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            }
           ],
-          "lyrics": ""
+          "lyricSegments": [],
+          "lyricsAlignment": "free"
         },
         {
-          "parts": [
-            "-;r;m : f;-;f : -;-;- : -;-;- | f;f;f : -;-;- : -;m;f : -;s;s | f;-;m : -;-;- : -;-;- : -;-;- ||",
-            "-;f,;s, : l,;-;l, : -;l,;r : -;d;t, | t,;t,;t, : -;-;- : -;l,;t, : -;t,;t, | d;-;d : -;-;- : -;-;- : -;-;- ||",
-            "-;d;d : r;-;r : -;-;- : -;-;- | r;r;r : -;-;- : -;d;r : -;r;r | l;-;s : -;-;- : -;-;- : -;-;- ||",
-            "-;d,;d, : r,;-;r, : -;-;- : -;-;- | s,;s,;s, : -;-;- : -;s,;s, : -;s,;s, | d;-;d : -;-;- : -;-;s, : -;-;- ||"
+          "section": "Système 4",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "-;r;m : f;-;f : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "f;f;f : -;-;- : -;m;f : -;s;s",
+                  "barline": "|"
+                },
+                {
+                  "notation": "f;-;m : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "-;f,;s, : l,;-;l, : -;l,;r : -;d;t,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "t,;t,;t, : -;-;- : -;l,;t, : -;t,;t,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;-;d : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "-;d;d : r;-;r : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "r;r;r : -;-;- : -;d;r : -;r;r",
+                  "barline": "|"
+                },
+                {
+                  "notation": "l;-;s : -;-;- : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "-;d,;d, : r,;-;r, : -;-;- : -;-;-",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : -;-;- : -;s,;s, : -;s,;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;-;d : -;-;- : -;-;s, : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            }
           ],
-          "lyrics": ""
+          "lyricSegments": [],
+          "lyricsAlignment": "free"
         },
         {
-          "parts": [
-            "-;-;- : -;s,;t : m;r;d : -;d;d | d;r;d : t,;-;d : -;-;- : -;-;- ||",
-            "-;-;- : -;-;- : d;s,;s, : -;m;s, | s,;s,;s, : s,;-;s, : -;-;- : -;-;- ||",
-            "-;-;- : -;-;- : s;f;m : -;d;r | m;f;m : r;-;m : -;-;- : -;-;- ||",
-            "d;t,;d : r;m;d : s,;s,;s, : -;l,;s, | s,;s,;s, : d,;-;d, : -;-;- : -;-;- ||"
+          "section": "DS (Afarany)",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "-;-;- : -;s,;t : m;r;d : -;d;d",
+                  "barline": "|"
+                },
+                {
+                  "notation": "d;r;d : t,;-;d : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "-;-;- : -;-;- : d;s,;s, : -;m;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : s,;-;s, : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "-;-;- : -;-;- : s;f;m : -;d;r",
+                  "barline": "|"
+                },
+                {
+                  "notation": "m;f;m : r;-;m : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "d;t,;d : r;m;d : s,;s,;s, : -;l,;s,",
+                  "barline": "|"
+                },
+                {
+                  "notation": "s,;s,;s, : d,;-;d, : -;-;- : -;-;-",
+                  "barline": "||"
+                }
+              ]
+            }
           ],
-          "lyrics": ""
+          "lyricSegments": [],
+          "lyricsAlignment": "free"
         }
       ],
       "verses": [
         "2- Jesoa tia ô Mpamonjy ianao\nFa nanaiky ho faty hisolovana\nSaingy velona ho mandrakizay\nMba ho santatra hoan'izay mino",
         "3- Ry olombelona ô, tsarevy izao\nDidy vaovao no nomen'ny Tompo\nDia ny mba hifankatiavantsika\nSatria mpianatra voafidy hanompo"
-      ]
+      ],
+      "schemaVersion": 2,
+      "beatUnit": "dotted-quarter",
+      "lyricsAlignment": "free",
+      "lyricSegments": [
+        "Ny fitiavanao ry Ray mpahary ô",
+        "Nomenao ny zanakao malalanao",
+        "Mba tsy hisy ho very izay mino Azy",
+        "Hanam-piadanana mandrakizay",
+        "Ref: Sarobidy sy manan-danja (sy manandanja)",
+        "Ny fitiavan'Andriamanitra (tsy mba ho sandaina)",
+        "Tsy sandaina amin'ny vola na ny harena",
+        "Fa tena fitiavana",
+        "Jesoa tia ô Mpamonjy ianao",
+        "Fa nanaiky ho faty hisolovana",
+        "Saingy velona ho mandrakizay",
+        "Mba ho santatra hoan'izay mino",
+        "Ry olombelona ô, tsarevy izao",
+        "Didy vaovao no nomen'ny Tompo",
+        "Dia ny mba hifankatiavantsika",
+        "Satria mpianatra voafidy hanompo"
+      ],
+      "transcriptionNote": "Notation conservée depuis la transcription existante associée à cette chanson et réorganisée en pistes indépendantes. Vérification note par note sur la photo encore nécessaire pour les passages peu lisibles."
     },
     "albumCover": null
   },
@@ -1082,6 +1439,681 @@
       ],
       "layoutVersion": 2,
       "alignment": "independent"
+    },
+    "albumCover": null
+  },
+  {
+    "id": 17,
+    "title": "Fahatsiarovan-tena",
+    "lyrics": "1. Mety ho kivy indraindray, tena reraka ny fanahy,\nMilho ketaka? Nahiny fiainana ety!\n2. Ka nefa ry Ray, ny voasoritrao ho ahy,\nDia fia-daham-po? Ho ahy mandrakizay!\n\nTsisy fiadanampo sy miady saina koa, rakotra haizina jamban'ny fahazarana!\nFa ... (tohiny tsy azo vakina tsara amin'ny sary)\n\nRaha lavitra Anao aho, feno ahiahy,\nMisaraka Aminao aho dia very.\nFa eo anilanao aho, tony re ny fo!\nFa ao Aminao aho mandroso ...",
+    "author": "Faneva – Endard",
+    "translator": null,
+    "album": "Album volume 1",
+    "updatedAt": 1,
+    "solfa": {
+      "ref": null,
+      "keyName": "G",
+      "tonic": "G",
+      "meter": "4/4",
+      "beatsPerBar": 4,
+      "bpm": null,
+      "tempo": null,
+      "playback": {
+        "instrument": "piano",
+        "countIn": true,
+        "singNames": true
+      },
+      "origin": [
+        "Unisson Femme",
+        "Unisson Homme"
+      ],
+      "composer": "Faneva – Endard",
+      "arranger": null,
+      "voices": [
+        "S",
+        "A",
+        "T",
+        "B"
+      ],
+      "systems": [
+        {
+          "section": "Unisson Femme",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "s, : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d, r",
+                  "beats": null
+                },
+                {
+                  "notation": "m : m,m : - : m,m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : m,r : - : l",
+                  "beats": null
+                },
+                {
+                  "notation": "r : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s, : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d, r",
+                  "beats": null
+                },
+                {
+                  "notation": "m : m,m : - : m,m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : m,r : - : l",
+                  "beats": null
+                },
+                {
+                  "notation": "r : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": []
+            },
+            {
+              "voice": "B",
+              "measures": []
+            }
+          ],
+          "lyricSegments": [
+            "1. Mety ho kivy indraindray, tena reraka ny fanahy,",
+            "Milho ketaka? (lecture incertaine) nahiny fiainana ety!",
+            "2. Ka nefa ry Ray, ny voasoritrao ho ahy,",
+            "dia fia-daham-po? (lecture incertaine), ho ahy mandrakizay!"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "section": "Unisson Homme",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": []
+            },
+            {
+              "voice": "A",
+              "measures": []
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "- : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d,m",
+                  "beats": null
+                },
+                {
+                  "notation": "m : m,m : - : m,m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : m,r : - : l",
+                  "beats": null
+                },
+                {
+                  "notation": "r : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "- : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : d,d : - : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d,m",
+                  "beats": null
+                },
+                {
+                  "notation": "m : m,m : - : m,m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : m,r : - : l",
+                  "beats": null
+                },
+                {
+                  "notation": "r : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Tsisy fiadanampo sy miady saina koa, rakotra haizina jamban'ny fahazarana!",
+            "Fa iza hono no nandray? (lecture incertaine) ... ho ahy ... (lecture incertaine)"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "section": "Refrain – système 1",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : r : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s.f : m : - : f",
+                  "beats": null
+                },
+                {
+                  "notation": "r : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : r : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s : f,m :",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : t, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d.d : d,d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "t, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : t, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : d,d :",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : f : -",
+                  "beats": null
+                },
+                {
+                  "notation": "m.l : s, : - : l",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : f : -",
+                  "beats": null
+                },
+                {
+                  "notation": "m : l, s :",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d.d : d,d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : s, : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : d,d :",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Raha lavitra Anao aho, feno ahiahy,",
+            "Misaraka Aminao aho dia very,",
+            "Fa eo anilanao aho,",
+            "tony re ny fo! Fa ao Aminao aho mandroso ..."
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "section": "Refrain – système 2",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "- : f : r : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : r",
+                  "beats": null
+                },
+                {
+                  "notation": "m,m : s, : - : m",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : m",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "- : d : t, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : l,",
+                  "beats": null
+                },
+                {
+                  "notation": "d,d : d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "t, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "- : l, : f : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : s",
+                  "beats": null
+                },
+                {
+                  "notation": "l : - : f",
+                  "beats": null
+                },
+                {
+                  "notation": "s,s : m : - : s",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : s",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "- : d : s, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : f",
+                  "beats": null
+                },
+                {
+                  "notation": "s,s : s, : - : s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : s, : s, l, t, s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "Fa ...! Ny falotako ihany Jesoa,",
+            "Mampanakaiky ... (lecture incertaine),",
+            "Fa ... (suite difficile à lire)"
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "section": "DS – Famaranana",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "f : m : r : t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "d : d : l, : s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "l, : s, : f : r",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "s, : s, : s, : s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "poo no mampa-ho-ny ... (lecture incertaine)",
+            "Famaranana: to / Mi-ra-y A-mi-nao Je-soa ..."
+          ],
+          "lyricsAlignment": "free"
+        },
+        {
+          "section": "Fin",
+          "tracks": [
+            {
+              "voice": "S",
+              "measures": [
+                {
+                  "notation": "r : s, s, : f,m,r,t,",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : m",
+                  "beats": null
+                },
+                {
+                  "notation": "t : - : d : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "A",
+              "measures": [
+                {
+                  "notation": "t, : s, s, : d,d,l,s,",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "t, : - : s, : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "T",
+              "measures": [
+                {
+                  "notation": "f, : t, t, : l,s,f,r",
+                  "beats": null
+                },
+                {
+                  "notation": "m : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "s : - : s",
+                  "beats": null
+                },
+                {
+                  "notation": "f : - : m : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            },
+            {
+              "voice": "B",
+              "measures": [
+                {
+                  "notation": "s, : s, s, : s,,s,,s,,s,",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d, : - : -",
+                  "beats": null
+                },
+                {
+                  "notation": "d : - : d",
+                  "beats": null
+                },
+                {
+                  "notation": "s, : - : d, : - : -",
+                  "beats": null,
+                  "barline": "||"
+                }
+              ]
+            }
+          ],
+          "lyricSegments": [
+            "to",
+            "Mi-ra-y A-mi-nao",
+            "Je-soa —"
+          ],
+          "lyricsAlignment": "free"
+        }
+      ],
+      "verses": [],
+      "transcriptionStatus": "provisoire_a_verifier",
+      "transcriptionNote": "Lecture manuelle de la photo. Les mots et plusieurs symboles solfa peu nets sont signalés comme incertains dans les segments de paroles. Les mesures de chaque voix sont indépendantes."
     },
     "albumCover": null
   }
