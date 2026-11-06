@@ -265,7 +265,7 @@
   "author": "Rakotomalala Faneva Harivony (Endard)",
   "translator": null,
   "album": "Album volume 2",
-  "updatedAt": 28,
+  "updatedAt": 31,
   "solfa": {
     "ref": null,
     "keyName": "Do dia G",
@@ -287,7 +287,9 @@
           ". : . : . : . | . : . : . : . | . : . : . : . | . : . : . : . | s,.s, : d.d : m.m : r.d | d.d : m.m : r.d : t, | m.m : m.f : m.r : d.r | f : m : r : - ||",
           ". : . : . : . | . : . : . : . | . : . : . : . | . : . : . : . | s,.s, : d.d : m.m : r.d | d.d : m.m : r.d : t, | m.m : m.f : m.r : d.r | f : m : r : - ||"
         ],
-        "lyrics": "Me-;ty : ho;ki- : vy;in- : drain-;dray | te-;na : re-;ra- : ka;am- : pa-;nahy | Mi-;la : ho;ke- : tra-;ka : no-;hon'ny | fi-;ai- : na-;na : e-ty! :  | Tsi-;sy : fi-;a- : da-;nam- : po;sy | mi-;a- : dy;sai- : na;ko- : a | Ra-;kotr'ai- : zi-;na : jam-;ban'ny : fa-;ha- | za- : ra- : na :  ||"
+        "lyrics": "Me-;ty : ho;ki- : vy;in- : drain-;dray | te-;na : re-;ra- : ka;am- : pa-;nahy | Mi-;la : ho;ke- : tra-;ka : no-;hon'ny | fi-;ai- : na-;na : e-ty! :  | Tsi-;sy : fi-;a- : da-;nam- : po;sy | mi-;a- : dy;sai- : na;ko- : a | Ra-;kotr'ai- : zi-;na : jam-;ban'ny : fa-;ha- | za- : ra- : na :  ||",
+        "repeatLyrics": "Kanefa re ry Ray ny voasoritrao ho ahy\nDia fiadanampo ho ahy mandrakizay\nFa izaho no tsy nandray lay natolotrao ho ahy\nKa manenina tafasaraka aminao",
+        "mark": "segno"
       },
       {
         "parts": [
@@ -296,7 +298,8 @@
           "s, : s, : d : s, | s, : f, : m, : f, | s, : s, : l, : s, | s, : - : - : - | s, : s, : d : s, | s, : f, : m, : f, | m, : s, : s, : s, | m, : r, : m, : - ||",
           "d, : d, : d, : d, | m, : m, : m, : m, | l,, : l,, : l,, : l,, | s,, : - : - : - | d, : d, : d, : d, | m, : m, : m, : m, | l,, : l,, : s,, : s,, | d, : s,, : d, : - ||"
         ],
-        "lyrics": "Ra- : ha : la- : vi- | tra : A- : nao : fe- | no : a- : hi- : a- | hy :  :  :  | Mi- : sa- : ra- : k'A- | mi- : nao : a- : ho | di- : a : ve- : ry | fa- : na- : hy :  ||"
+        "lyrics": "Ra- : ha : la- : vi- | tra : A- : nao : fe- | no : a- : hi- : a- | hy :  :  :  | Mi- : sa- : ra- : k'A- | mi- : nao : a- : ho | di- : a : ve- : ry | fa- : na- : hy :  ||",
+        "repeatLyrics": "Fa eo anilanao aho : tony re ny fo\nFa ao aminao aho : mandroso hery koa"
       },
       {
         "parts": [
@@ -305,7 +308,9 @@
           "d : d : d : d | s, : s, : s, : s, | t, : t, : l, : t, | d : d : d : t, | s, : s, : - : - | d : d : d : d | s, : s, : s, : s, | t, : t, : l, : t, | d : t, : s, : s, | m, : - : - : - ||",
           "d, : d, : d, : d, | m, : m, : m, : m, | r, : r, : r, : r, | s, : f, : m, : r, | s,, : s,, : - : - | d, : d, : d, : d, | m, : m, : m, : m, | r, : r, : r, : r, | s, : s, : s,, : s,, | d, : - : - : - ||"
         ],
-        "lyrics": "Ny : fa- : ho- : ta- | ko : i- : ha- : ny | Je- : so : nam- : pa- | na- : la- : vi- : tra | a- : hy :  :  | Tsy : fa- : ne- : ke- | ko : A- : nao : Tom- | po : o : no : mam- | pa- : ho- : ry : a- | hy :  :  :  ||"
+        "lyrics": "Ny : fa- : ho- : ta- | ko : i- : ha- : ny | Je- : so : nam- : pa- | na- : la- : vi- : tra | a- : hy :  :  | Tsy : fa- : ne- : ke- | ko : A- : nao : Tom- | po : o : no : mam- | pa- : ho- : ry : a- | hy :  :  :  ||",
+        "repeatLyrics": "Ambany elatrao tompo o ! tsy orin-javatsoa\nMiray aminao Jeso faniriako dia ho to-",
+        "mark": "ds"
       },
       {
         "parts": [
@@ -314,7 +319,8 @@
           "d : d : d : d | s, : s, : s, : s, | t, : t, : l, : t, | d : t, : s, : - | m, : - : - : - ||",
           "d, : d, : d, : d, | m, : m, : m, : m, | r, : r, : r, : r, | s,, : s,, : s,, : - | d, : - : - : - ||"
         ],
-        "lyrics": "Mi- : ray : a- : mi- | nao : Je- : so : fa- | ni- : ri- : a- : ko | di- : a : ho- :  | to :  :  :  ||"
+        "lyrics": "Mi- : ray : a- : mi- | nao : Je- : so : fa- | ni- : ri- : a- : ko | di- : a : ho- :  | to :  :  :  ||",
+        "mark": "fin"
       }
     ],
     "verses": [
